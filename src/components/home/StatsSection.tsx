@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
-import { Users, Stethoscope, Building2, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: 5000, suffix: "+", label: "Patients Treated", oromo: "Dhukkubsataa Yaalame", color: "text-brand-red", bg: "bg-brand-red-light border-red-200" },
-  { icon: Stethoscope, value: 1200, suffix: "+", label: "Surgeries Performed", oromo: "Baqaqsanii Yaaluu", color: "text-blue-600", bg: "bg-blue-50 border-blue-200" },
-  { icon: Building2, value: 10, suffix: "+", label: "Years of Excellence", oromo: "Waggaa Tajaajilaaf", color: "text-brand-red", bg: "bg-brand-red-light border-red-200" },
-  { icon: Clock, value: 24, suffix: "/7", label: "Emergency Available", oromo: "Banaa Sa'aa 24", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },
+  { value: 5000, suffix: "+", label: "Patients Treated", oromo: "Dhukkubsataa Yaalame", bg: "bg-brand-red", text: "text-white" },
+  { value: 1200, suffix: "+", label: "Surgeries Performed", oromo: "Baqaqsanii Yaaluu", bg: "bg-slate-900", text: "text-white" },
+  { value: 10, suffix: "+", label: "Years of Excellence", oromo: "Waggaa Tajaajilaaf", bg: "bg-brand-red", text: "text-white" },
+  { value: 24, suffix: "/7", label: "Emergency Available", oromo: "Banaa Sa'aa 24", bg: "bg-slate-900", text: "text-white" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -41,24 +40,19 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
 export default function StatsSection() {
   return (
-    <section className="section-white py-16 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 stagger">
-          {stats.map(({ icon: Icon, value, suffix, label, oromo, color, bg }, i) => (
-            <RevealOnScroll key={label} direction="up" delay={i * 80}>
-              <div className={`card border ${bg} p-6 sm:p-8 text-center`}>
-                <div className={`w-11 h-11 rounded-xl ${bg} border flex items-center justify-center mx-auto mb-4`}>
-                  <Icon size={20} className={color} />
-                </div>
-                <p className={`text-4xl sm:text-5xl font-black ${color} mb-1`}>
-                  <Counter target={value} suffix={suffix} />
-                </p>
-                <p className="text-slate-700 text-sm font-semibold">{label}</p>
-                <p className="text-slate-400 text-xs mt-0.5 italic">{oromo}</p>
-              </div>
-            </RevealOnScroll>
-          ))}
-        </div>
+    <section className="py-0 border-b border-slate-100">
+      <div className="grid grid-cols-2 lg:grid-cols-4">
+        {stats.map(({ value, suffix, label, oromo, bg, text }, i) => (
+          <RevealOnScroll key={label} direction="up" delay={i * 60}>
+            <div className={`${bg} ${text} px-8 py-12 text-center`}>
+              <p className="text-5xl sm:text-6xl font-black mb-2 leading-none">
+                <Counter target={value} suffix={suffix} />
+              </p>
+              <p className="text-sm font-bold opacity-90 tracking-wide">{label}</p>
+              <p className="text-xs opacity-50 italic mt-0.5">{oromo}</p>
+            </div>
+          </RevealOnScroll>
+        ))}
       </div>
     </section>
   );

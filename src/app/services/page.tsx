@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Scissors, Baby, Heart, ScanLine, Zap, Microscope, Activity, Stethoscope, TestTube, BedDouble, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import type { Metadata } from "next";
 
@@ -11,67 +11,49 @@ export const metadata: Metadata = {
 
 const mainServices = [
   {
-    icon: Scissors,
     title: "General Surgery",
     oromo: "Baqaqsanii Yaaluu",
-    accent: "border-l-brand-red",
-    iconBg: "bg-brand-red-light",
-    iconColor: "text-brand-red",
+    borderColor: "#DC2626",
     image: "/images/facilities/operating-room-1-wide.jpg",
     description: "Our experienced surgical team performs a comprehensive range of general surgical procedures using the latest minimally invasive and open surgical techniques.",
     features: ["Appendectomy & hernia repair", "Cholecystectomy (gallbladder removal)", "Abdominal surgeries", "Wound debridement & closure", "Laparoscopic procedures", "Soft tissue tumour excision"],
   },
   {
-    icon: Baby,
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
-    accent: "border-l-blue-600",
-    iconBg: "bg-blue-50",
-    iconColor: "text-blue-600",
+    borderColor: "#2563EB",
     image: "/images/facilities/operating-room-2-entrance.jpg",
     description: "Specialised medical and surgical care tailored to the unique needs of infants, children, and adolescents, delivered with extra sensitivity and expertise.",
     features: ["Paediatric general surgery", "Neonatal care support", "Paediatric medical consultations", "Minor paediatric procedures", "Child-friendly recovery environment", "Family-centred care approach"],
   },
   {
-    icon: Heart,
     title: "Maternal & Obstetric Care",
     oromo: "Haadha fi Daa'ima Yaaluu",
-    accent: "border-l-rose-600",
-    iconBg: "bg-rose-50",
-    iconColor: "text-rose-600",
+    borderColor: "#E11D48",
     image: "/images/facilities/recovery-room.jpg",
     description: "Comprehensive care for mothers throughout pregnancy, childbirth, and the postnatal period with a focus on the safety of both mother and child.",
     features: ["Caesarean section (C-section)", "Normal delivery support", "Gynaecological surgeries", "Ectopic pregnancy management", "Postnatal recovery care", "Family planning consultations"],
   },
   {
-    icon: ScanLine,
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
-    accent: "border-l-violet-600",
-    iconBg: "bg-violet-50",
-    iconColor: "text-violet-600",
+    borderColor: "#7C3AED",
     image: "/images/equipment/ultrasound-machine.jpg",
     description: "Advanced in-house imaging capabilities enabling rapid, accurate diagnosis to guide treatment decisions and surgical planning.",
     features: ["Mindray DC-40 colour Doppler ultrasound", "Abdominal & pelvic sonography", "Obstetric ultrasound", "Full digital X-ray suite", "Chest & skeletal radiography", "Digital radiology workstation"],
   },
   {
-    icon: Zap,
     title: "24/7 Emergency Services",
     oromo: "Tajaajila Hatattamaa Sa'aa 24",
-    accent: "border-l-amber-500",
-    iconBg: "bg-amber-50",
-    iconColor: "text-amber-600",
+    borderColor: "#D97706",
     image: "/images/patient-areas/indoor-reception.jpg",
     description: "Our dedicated emergency team is always on standby to triage and treat medical and surgical emergencies promptly, any hour of the day or night.",
     features: ["Immediate triage & stabilization", "Emergency surgical procedures", "Trauma management", "Resuscitation services", "24-hour staffed reception", "Rapid diagnostic access"],
   },
   {
-    icon: Microscope,
     title: "Sterilization & Safety",
     oromo: "Qulqullina fi Nageenya",
-    accent: "border-l-emerald-600",
-    iconBg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
+    borderColor: "#059669",
     image: "/images/facilities/sterilization-room.jpg",
     description: "Our rigorous sterilization department ensures every instrument used in procedures meets the highest international infection-control standards.",
     features: ["Large-capacity autoclave sterilization", "WHO infection control protocols", "Single-use instrument policies", "Sterile environment maintenance", "Surgical safety checklist compliance", "Regular equipment certification"],
@@ -79,12 +61,12 @@ const mainServices = [
 ];
 
 const additionalServices = [
-  { icon: Activity, name: "Post-Operative Monitoring", oromo: "Itti aanee hordofuu" },
-  { icon: Stethoscope, name: "Pre-Operative Consultations", oromo: "Dursa mari'achuu" },
-  { icon: TestTube, name: "Laboratory Testing", oromo: "Qorannoo Lab" },
-  { icon: BedDouble, name: "Inpatient Recovery Care", oromo: "Bakka ciisichaa fayyuu" },
-  { icon: Heart, name: "Wound Care", oromo: "Madaa Qorachuu" },
-  { icon: Zap, name: "IV Therapy & Infusions", oromo: "IV Yaaluu" },
+  { name: "Post-Operative Monitoring", oromo: "Itti aanee hordofuu" },
+  { name: "Pre-Operative Consultations", oromo: "Dursa mari'achuu" },
+  { name: "Laboratory Testing", oromo: "Qorannoo Lab" },
+  { name: "Inpatient Recovery Care", oromo: "Bakka ciisichaa fayyuu" },
+  { name: "Wound Care", oromo: "Madaa Qorachuu" },
+  { name: "IV Therapy & Infusions", oromo: "IV Yaaluu" },
 ];
 
 export default function ServicesPage() {
@@ -109,19 +91,16 @@ export default function ServicesPage() {
       {/* ── Main services ── */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          {mainServices.map(({ icon: Icon, title, oromo, accent, iconBg, iconColor, image, description, features }, idx) => (
+          {mainServices.map(({ title, oromo, borderColor, image, description, features }, idx) => (
             <RevealOnScroll key={title} direction={idx % 2 === 0 ? "left" : "right"}>
-              <div className={`card border-l-4 ${accent} overflow-hidden`}>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 ${idx % 2 === 1 ? "" : ""}`}>
+              <div className="card overflow-hidden" style={{ borderLeft: `4px solid ${borderColor}` }}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2`}>
                   <div className={`relative ${idx % 2 === 1 ? "lg:order-2" : ""}`} style={{ minHeight: 280 }}>
                     <Image src={image} alt={title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-50/10" />
                   </div>
                   <div className={`p-8 lg:p-10 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <div className={`w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
-                      <Icon size={22} className={iconColor} />
-                    </div>
-                    <p className={`text-xs font-black tracking-widest uppercase mb-1 ${iconColor} italic`}>{oromo}</p>
+                    <p className="text-xs font-black tracking-widest uppercase mb-1 italic" style={{ color: borderColor }}>{oromo}</p>
                     <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">{title}</h2>
                     <p className="text-slate-500 leading-relaxed mb-6">{description}</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -148,12 +127,10 @@ export default function ServicesPage() {
             <p className="text-slate-500">Supporting your care journey at every step.</p>
           </RevealOnScroll>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {additionalServices.map(({ icon: Icon, name, oromo }, i) => (
+            {additionalServices.map(({ name, oromo }, i) => (
               <RevealOnScroll key={name} direction="up" delay={i * 60}>
-                <div className="card p-5 text-center hover:border-red-200">
-                  <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center mx-auto mb-3">
-                    <Icon size={18} className="text-brand-red" />
-                  </div>
+                <div className="card p-5 text-center hover:border-red-200 hover:-translate-y-0.5 transition-all duration-200">
+                  <div className="h-1 w-8 bg-brand-red rounded mx-auto mb-3" />
                   <p className="text-slate-700 text-xs font-black leading-tight">{name}</p>
                   <p className="text-slate-400 text-xs italic mt-0.5">{oromo}</p>
                 </div>

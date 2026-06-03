@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, Heart, Target, Eye, Users, Award, Shield, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import type { Metadata } from "next";
 
@@ -19,10 +19,10 @@ const milestones = [
 ];
 
 const coreValues = [
-  { icon: Heart, label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth." },
-  { icon: Shield, label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols." },
-  { icon: Award, label: "Excellence", oromo: "Qulqullina", desc: "World-class standards in every procedure performed." },
-  { icon: Users, label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes." },
+  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/facilities/recovery-room.jpg", color: "#DC2626" },
+  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/facilities/sterilization-room.jpg", color: "#059669" },
+  { label: "Excellence", oromo: "Qulqullina", desc: "World-class standards in every procedure performed.", image: "/images/facilities/operating-room-1.jpg", color: "#2563EB" },
+  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/team/medical-team.jpg", color: "#7C3AED" },
 ];
 
 export default function AboutPage() {
@@ -93,23 +93,27 @@ export default function AboutPage() {
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <RevealOnScroll direction="left">
-              <div className="card border-l-4 border-l-brand-red p-8">
-                <div className="w-12 h-12 rounded-xl bg-brand-red-light flex items-center justify-center mb-5">
-                  <Target size={22} className="text-brand-red" />
+              <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
+                <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Our Mission" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="h-1 w-10 bg-brand-red rounded mb-4" />
+                  <p className="text-brand-red-mid text-xs font-black tracking-widest uppercase mb-1">Kaayyoo Keenya</p>
+                  <h3 className="text-2xl font-black text-white mb-3">Our Mission</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">To deliver world-class surgical and medical care to every patient in Ethiopia, regardless of background, by combining advanced technology with compassionate, personalised attention.</p>
                 </div>
-                <p className="text-brand-red text-xs font-black tracking-widest uppercase mb-1">Kaayyoo Keenya</p>
-                <h3 className="text-xl font-black text-slate-900 mb-3">Our Mission</h3>
-                <p className="text-slate-500 leading-relaxed">To deliver world-class surgical and medical care to every patient in Ethiopia, regardless of background, by combining advanced technology with compassionate, personalised attention.</p>
               </div>
             </RevealOnScroll>
             <RevealOnScroll direction="right">
-              <div className="card border-l-4 border-l-blue-600 p-8">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
-                  <Eye size={22} className="text-blue-600" />
+              <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
+                <Image src="/images/building-exterior.jpg" alt="Our Vision" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="h-1 w-10 bg-blue-500 rounded mb-4" />
+                  <p className="text-blue-300 text-xs font-black tracking-widest uppercase mb-1">Hawwii Keenya</p>
+                  <h3 className="text-2xl font-black text-white mb-3">Our Vision</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">To be the most trusted, technologically advanced, and patient-centred surgical speciality center in East Africa — a beacon of medical excellence that sets the standard for the continent.</p>
                 </div>
-                <p className="text-blue-600 text-xs font-black tracking-widest uppercase mb-1">Hawwii Keenya</p>
-                <h3 className="text-xl font-black text-slate-900 mb-3">Our Vision</h3>
-                <p className="text-slate-500 leading-relaxed">To be the most trusted, technologically advanced, and patient-centred surgical speciality center in East Africa — a beacon of medical excellence that sets the standard for the continent.</p>
               </div>
             </RevealOnScroll>
           </div>
@@ -124,15 +128,17 @@ export default function AboutPage() {
             <p className="text-slate-500 text-lg max-w-xl mx-auto">Gatii keenya — These principles guide everything we do.</p>
           </RevealOnScroll>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {coreValues.map(({ icon: Icon, label, oromo, desc }, i) => (
+            {coreValues.map(({ label, oromo, desc, image, color }, i) => (
               <RevealOnScroll key={label} direction="up" delay={i * 80}>
-                <div className="card p-6 text-center hover:border-red-200">
-                  <div className="w-12 h-12 rounded-xl bg-brand-red-light border border-red-200 flex items-center justify-center mx-auto mb-4">
-                    <Icon size={20} className="text-brand-red" />
+                <div className="relative rounded-2xl overflow-hidden group" style={{ height: 220 }}>
+                  <Image src={image} alt={label} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:640px) 50vw, 25vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent" />
+                  <div className="absolute top-0 left-0 right-0 h-1" style={{ background: color }} />
+                  <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                    <p className="text-xs font-bold opacity-60 text-white italic mb-0.5">{oromo}</p>
+                    <p className="text-white font-black text-base mb-1">{label}</p>
+                    <p className="text-white/60 text-xs leading-relaxed">{desc}</p>
                   </div>
-                  <p className="text-brand-red text-xs font-bold italic mb-0.5">{oromo}</p>
-                  <p className="text-slate-900 font-black mb-1">{label}</p>
-                  <p className="text-slate-400 text-xs leading-relaxed">{desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
