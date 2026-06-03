@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Clock, Mail, Facebook, Instagram } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,8 +26,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { href: "https://www.facebook.com", icon: Facebook, label: "Facebook" },
-                { href: "#", icon: Instagram, label: "Instagram" },
+                { href: "https://web.facebook.com/jennanmedicalcenter/", icon: Facebook, label: "Facebook" },
               ].map(({ href, icon: Icon, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-red border border-slate-700 hover:border-brand-red flex items-center justify-center text-slate-400 hover:text-white transition-all"

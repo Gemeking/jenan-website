@@ -26,9 +26,6 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="section-badge mb-6 inline-flex" style={{ background: "rgba(220,38,38,0.2)", borderColor: "rgba(220,38,38,0.4)", color: "#FCA5A5" }}>
-            Nu Quunnamaa — Contact Us
-          </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-5">
             We&apos;re Here to <span className="text-brand-red-mid">Help</span>
           </h1>
@@ -72,7 +69,6 @@ export default function ContactPage() {
             {/* Form */}
             <RevealOnScroll direction="left">
               <div className="card p-8 sm:p-10">
-                <span className="section-badge mb-4 inline-flex">Appointment Request</span>
                 <h2 className="text-2xl font-black text-slate-900 mb-1">Book a Consultation</h2>
                 <p className="text-slate-400 text-sm mb-8">Fill in the form and our team will contact you promptly.</p>
                 <ContactForm />

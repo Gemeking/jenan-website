@@ -67,8 +67,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <RevealOnScroll className="text-center mb-14">
-          <span className="section-badge">Tajaajila Keenya — Our Services</span>
-          <div className="red-rule mx-auto mt-4 mb-5" />
+          <div className="red-rule mx-auto mb-5" />
           <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
             Comprehensive{" "}
             <span className="gradient-text-red">Medical Services</span>

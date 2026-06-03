@@ -35,9 +35,6 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="section-badge mb-6 inline-flex" style={{ background: "rgba(220,38,38,0.2)", borderColor: "rgba(220,38,38,0.4)", color: "#FCA5A5" }}>
-            Waa&apos;ee Keenya — About Us
-          </span>
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-5">
             Ethiopia&apos;s Premier<br />
             <span className="text-brand-red-mid">Surgical Center</span>
@@ -66,7 +63,6 @@ export default function AboutPage() {
             </RevealOnScroll>
 
             <RevealOnScroll direction="right">
-              <span className="section-badge mb-5 inline-flex">Seenaa Keenya — Our Story</span>
               <div className="red-rule mb-5" />
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-6">
                 A Decade of <span className="gradient-text-red">Excellence</span>

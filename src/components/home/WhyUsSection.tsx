@@ -52,7 +52,6 @@ export default function WhyUsSection() {
           {/* Right — reasons */}
           <div>
             <RevealOnScroll direction="right">
-              <span className="section-badge mb-4 inline-flex">Maaliif Keenya — Why Choose Us</span>
               <div className="red-rule mb-5" />
               <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4 leading-tight">
                 Excellence You Can{" "}
