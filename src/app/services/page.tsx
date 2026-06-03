@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Scalpel, Baby, Heart, ScanLine, Zap, Microscope,
+  Scissors, Baby, Heart, ScanLine, Zap, Microscope,
   Activity, Stethoscope, TestTube, BedDouble, ArrowRight, CheckCircle2,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const mainServices = [
   {
-    icon: Scalpel,
+    icon: Scissors,
     title: "General Surgery",
     color: "from-blue-500 to-blue-700",
     glow: "rgba(59,130,246,0.25)",

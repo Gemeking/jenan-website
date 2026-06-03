@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Scalpel, Baby, Heart, ScanLine, Zap, Microscope, ArrowRight } from "lucide-react";
+import { Scissors, Baby, Heart, ScanLine, Zap, Microscope, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: Scalpel,
+    icon: Scissors,
     title: "General Surgery",
     description: "Advanced surgical procedures performed by our team of expert surgeons using state-of-the-art equipment and techniques.",
     color: "from-blue-500 to-blue-700",
