@@ -1,117 +1,113 @@
-// @ts-nocheck
-// R3F JSX elements (group, mesh, etc.) are not in React 19's JSX.IntrinsicElements.
-// This is a known R3F v8 + React 19 incompatibility; the component works correctly at runtime.
 "use client";
 
-import { useRef, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshReflectorMaterial } from "@react-three/drei";
-import * as THREE from "three";
-
-function CrossMesh() {
-  const groupRef = useRef<THREE.Group>(null);
-  const glowRef = useRef<THREE.Mesh>(null);
-
-  useFrame((state) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.007;
-      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.4) * 0.08;
-    }
-    if (glowRef.current) {
-      const pulse = 0.7 + Math.sin(state.clock.elapsedTime * 1.8) * 0.3;
-      (glowRef.current.material as THREE.MeshStandardMaterial).emissiveIntensity = pulse;
-    }
-  });
-
-  const redMat = new THREE.MeshStandardMaterial({
-    color: new THREE.Color("#C81E1E"),
-    metalness: 0.45,
-    roughness: 0.18,
-    emissive: new THREE.Color("#7F1D1D"),
-    emissiveIntensity: 0.4,
-  });
-
-  const glowMat = new THREE.MeshStandardMaterial({
-    color: new THREE.Color("#EF4444"),
-    emissive: new THREE.Color("#DC2626"),
-    emissiveIntensity: 0.8,
-    transparent: true,
-    opacity: 0.18,
-    depthWrite: false,
-  });
-
-  return (
-    <Float speed={2.2} rotationIntensity={0.15} floatIntensity={0.6}>
-      <group ref={groupRef}>
-        {/* Main cross — horizontal beam */}
-        <mesh material={redMat} castShadow>
-          <boxGeometry args={[2.6, 0.82, 0.38]} />
-        </mesh>
-        {/* Main cross — vertical beam */}
-        <mesh material={redMat} castShadow>
-          <boxGeometry args={[0.82, 2.6, 0.38]} />
-        </mesh>
-
-        {/* Beveled edge highlights — top/bottom faces */}
-        <mesh position={[0, 0, 0.2]}>
-          <boxGeometry args={[2.58, 0.8, 0.04]} />
-          <meshStandardMaterial color="#F87171" metalness={0.2} roughness={0.3} />
-        </mesh>
-        <mesh position={[0, 0, 0.2]}>
-          <boxGeometry args={[0.8, 2.58, 0.04]} />
-          <meshStandardMaterial color="#F87171" metalness={0.2} roughness={0.3} />
-        </mesh>
-
-        {/* Outer glow halos */}
-        <mesh ref={glowRef} material={glowMat}>
-          <boxGeometry args={[3.0, 1.2, 0.8]} />
-        </mesh>
-        <mesh material={glowMat}>
-          <boxGeometry args={[1.2, 3.0, 0.8]} />
-        </mesh>
-
-        {/* Center gem / emblem */}
-        <mesh position={[0, 0, 0.25]} castShadow>
-          <cylinderGeometry args={[0.28, 0.28, 0.12, 6]} />
-          <meshStandardMaterial
-            color="#FCA5A5"
-            metalness={0.7}
-            roughness={0.1}
-            emissive="#EF4444"
-            emissiveIntensity={1.2}
-          />
-        </mesh>
-      </group>
-    </Float>
-  );
-}
+const D = 22;   // depth
+const BW = 146; // beam length
+const BH = 50;  // beam thickness
 
 export default function MedicalCross3D({ className = "" }: { className?: string }) {
   return (
-    <div className={className}>
-      <Canvas
-        camera={{ position: [0, 0, 6.5], fov: 44 }}
-        gl={{ alpha: true, antialias: true }}
-        style={{ background: "transparent" }}
-      >
-        <ambientLight intensity={0.55} color="#fff5f5" />
-        <directionalLight
-          position={[4, 6, 5]}
-          intensity={2.2}
-          color="#ffffff"
-          castShadow
-        />
-        {/* Warm red rim light from front-left */}
-        <pointLight position={[-3, 2, 4]} color="#EF4444" intensity={3.5} />
-        {/* Cool blue fill from opposite */}
-        <pointLight position={[3, -3, 2]} color="#93C5FD" intensity={1.2} />
-        {/* Warm back light */}
-        <pointLight position={[0, 0, -4]} color="#FCA5A5" intensity={1.8} />
+    <div
+      className={`relative flex items-center justify-center ${className}`}
+      style={{ isolation: "isolate" }}
+    >
+      {/* Ambient glow rings */}
+      <div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 300, height: 300,
+          background: "radial-gradient(circle, rgba(220,38,38,0.13) 0%, transparent 65%)",
+          animation: "glowPulse 3.5s ease-in-out infinite",
+        }}
+      />
+      <div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 190, height: 190,
+          background: "radial-gradient(circle, rgba(220,38,38,0.22) 0%, transparent 65%)",
+          animation: "glowPulse 3.5s ease-in-out infinite 1.75s",
+        }}
+      />
 
-        <Suspense fallback={null}>
-          <CrossMesh />
-        </Suspense>
-      </Canvas>
+      {/* Perspective root */}
+      <div style={{ perspective: "900px" }}>
+        {/* Float up/down */}
+        <div style={{ animation: "crossFloat 5s ease-in-out infinite" }}>
+          {/* 3-D spinning cross */}
+          <div
+            style={{
+              position: "relative",
+              width: BW,
+              height: BW,
+              transformStyle: "preserve-3d",
+              animation: "crossSpin 11s linear infinite",
+            }}
+          >
+            {/* ─── HORIZONTAL BEAM ─── */}
+            {/* front */}
+            <div style={face(0, (BW-BH)/2, BW, BH, `translateZ(${D}px)`,
+              "linear-gradient(135deg,#FCA5A5 0%,#EF4444 25%,#DC2626 70%,#991B1B 100%)",
+              8, `0 0 30px rgba(220,38,38,0.55)`)} />
+            {/* back */}
+            <div style={face(0, (BW-BH)/2, BW, BH, `translateZ(${-D}px)`,
+              "#7F1D1D", 8)} />
+            {/* top edge */}
+            <div style={face(0, (BW-BH)/2, BW, D*2,
+              `translateY(-${D}px) rotateX(-90deg)`,
+              "linear-gradient(to right,#EF4444,#FECACA,#EF4444)", 0)} />
+            {/* bottom edge */}
+            <div style={face(0, (BW-BH)/2+BH, BW, D*2,
+              `rotateX(90deg)`,
+              "linear-gradient(to right,#9B1C1C,#DC2626,#9B1C1C)", 0)} />
+
+            {/* ─── VERTICAL BEAM ─── */}
+            {/* front */}
+            <div style={face((BW-BH)/2, 0, BH, BW, `translateZ(${D}px)`,
+              "linear-gradient(180deg,#FCA5A5 0%,#EF4444 25%,#DC2626 70%,#991B1B 100%)",
+              8, `0 0 30px rgba(220,38,38,0.55)`)} />
+            {/* back */}
+            <div style={face((BW-BH)/2, 0, BH, BW, `translateZ(${-D}px)`,
+              "#7F1D1D", 8)} />
+            {/* right edge */}
+            <div style={face((BW-BH)/2+BH, 0, D*2, BW,
+              `rotateY(90deg)`,
+              "linear-gradient(to bottom,#EF4444,#FECACA,#EF4444)", 0)} />
+            {/* left edge */}
+            <div style={face((BW-BH)/2, 0, D*2, BW,
+              `translateX(-${D}px) rotateY(-90deg)`,
+              "linear-gradient(to bottom,#9B1C1C,#DC2626,#9B1C1C)", 0)} />
+
+            {/* ─── CENTER GEM ─── */}
+            <div style={{
+              position: "absolute",
+              width: 32, height: 32,
+              top: (BW-32)/2, left: (BW-32)/2,
+              transform: `translateZ(${D+2}px)`,
+              background: "radial-gradient(circle at 35% 35%, #FECACA 0%, #EF4444 60%, #991B1B 100%)",
+              borderRadius: 6,
+              boxShadow: "0 0 22px rgba(252,165,165,0.9)",
+            }} />
+          </div>
+        </div>
+      </div>
     </div>
   );
+}
+
+/* Helper: builds inline style for an absolutely-positioned face */
+function face(
+  left: number, top: number,
+  w: number, h: number,
+  transform: string,
+  background: string,
+  borderRadius: number,
+  boxShadow = ""
+): React.CSSProperties {
+  return {
+    position: "absolute",
+    left, top, width: w, height: h,
+    transform,
+    background,
+    borderRadius,
+    ...(boxShadow ? { boxShadow } : {}),
+  };
 }

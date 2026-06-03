@@ -3,13 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { ArrowRight, Phone, Shield, Clock, ChevronDown } from "lucide-react";
-
-const MedicalCross3D = dynamic(
-  () => import("@/components/ui/MedicalCross3D"),
-  { ssr: false, loading: () => <div className="w-full h-full" /> }
-);
+import MedicalCross3D from "@/components/ui/MedicalCross3D";
 
 const slides = [
   {

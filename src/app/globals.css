@@ -189,6 +189,22 @@ body {
   transform: translateY(-1px);
 }
 
+/* ─── 3D Medical Cross ─── */
+@keyframes crossSpin {
+  from { transform: rotateY(0deg) rotateX(10deg); }
+  to   { transform: rotateY(360deg) rotateX(10deg); }
+}
+
+@keyframes crossFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-20px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.9; }
+  50%       { transform: scale(1.12); opacity: 0.4; }
+}
+
 /* ─── Ken Burns on hero images ─── */
 @keyframes kenBurns {
   0%   { transform: scale(1.04) translate(0%, 0%); }
