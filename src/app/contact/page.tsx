@@ -64,8 +64,11 @@ export default function ContactPage() {
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-5">
             We&apos;re Here to <span className="text-brand-red-mid">Help</span>
           </h1>
-          <p className="text-slate-300 text-xl max-w-2xl mx-auto leading-relaxed">
-            Our team is available 24 hours a day, 7 days a week. Call us, find us, or send us an email — we&apos;re always ready.
+          <p className="text-brand-red-mid italic text-lg font-semibold mb-2">
+            &ldquo;Yeroo barbaaddan nu bira jirra.&rdquo;
+          </p>
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            We are here when you need us — 24 hours a day, 7 days a week. Call us, find us, or send us a message.
           </p>
         </div>
       </section>

@@ -3,12 +3,12 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { CheckCircle2, ShieldCheck, FlaskConical, HeartHandshake, Clock4, CheckCircle } from "lucide-react";
 
 const reasons = [
-  { icon: ShieldCheck, title: "Certified Surgical Excellence", desc: "WHO surgical safety checklists and international protocols observed in every procedure." },
-  { icon: FlaskConical, title: "Advanced Diagnostics", desc: "In-house X-ray, ultrasound, and radiology workstation for fast, accurate results on-site." },
-  { icon: HeartHandshake, title: "Compassionate Patient Care", desc: "Dignity and personalised attention for every patient from admission through to discharge." },
-  { icon: Clock4, title: "24 / 7 Emergency Response", desc: "Hatattamaan yoo isinitti dhufne — our emergency team is always on standby, day and night." },
-  { icon: CheckCircle2, title: "Sterile & Safe Environment", desc: "Rigorous autoclave sterilization and strict infection-control maintain the highest standards." },
-  { icon: CheckCircle, title: "Multidisciplinary Team", desc: "Surgeons, anaesthetists, nurses, and radiologists collaborating for optimal patient outcomes." },
+  { icon: ShieldCheck, title: "Certified Surgical Excellence", oromo: "Qulqullina Baqaqsaanii Mirkanaa'e", desc: "WHO surgical safety checklists and international protocols observed in every procedure." },
+  { icon: FlaskConical, title: "Advanced Diagnostics", oromo: "Sakatta'a Ammayyaa", desc: "In-house X-ray, ultrasound, and radiology workstation for fast, accurate results on-site." },
+  { icon: HeartHandshake, title: "Compassionate Patient Care", oromo: "Dhukkubsataa Jaalalaan Yaaluu", desc: "Kabajaa fi xiyyeeffannoo dhuunfaa — dignity and personalised attention from admission to discharge." },
+  { icon: Clock4, title: "24 / 7 Emergency Response", oromo: "Sa'aa 24 Hatattamaa Deebisuu", desc: "Yeroo hatattamaa nu bira jirtu — our emergency team is always on standby, day and night." },
+  { icon: CheckCircle2, title: "Sterile & Safe Environment", oromo: "Naannoo Qulqulluu fi Nagaa", desc: "Autoclave fi qulqullina dhibee ittisuu cimaadhan — rigorous sterilization maintaining the highest standards." },
+  { icon: CheckCircle, title: "Multidisciplinary Team", oromo: "Garee Ogeeyyii Waliin Hojjetuu", desc: "Qottuu, ogeeyyii qaama ujummoo, narsootaa fi ogeeyyii radiooloojii — collaborating for optimal outcomes." },
 ];
 
 export default function WhyUsSection() {
@@ -63,13 +63,14 @@ export default function WhyUsSection() {
             </RevealOnScroll>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger">
-              {reasons.map(({ icon: Icon, title, desc }, i) => (
+              {reasons.map(({ icon: Icon, title, oromo, desc }, i) => (
                 <RevealOnScroll key={title} direction="up" delay={i * 60}>
                   <div className="flex gap-3 group p-3 rounded-xl hover:bg-slate-50 transition-colors">
                     <div className="w-9 h-9 rounded-xl bg-brand-red-light border border-red-200 flex items-center justify-center shrink-0 mt-0.5">
                       <Icon size={16} className="text-brand-red" />
                     </div>
                     <div>
+                      <p className="text-brand-red text-[10px] font-bold italic mb-0.5">{oromo}</p>
                       <p className="text-slate-900 text-sm font-black mb-0.5">{title}</p>
                       <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
                     </div>

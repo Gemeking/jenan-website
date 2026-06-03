@@ -6,14 +6,14 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const facilities = [
-  { src: "/images/facilities/operating-room-1-wide.jpg", title: "Operating Theatre I", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
-  { src: "/images/team/medical-team.jpg", title: "Expert Medical Team", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
-  { src: "/images/facilities/recovery-room.jpg", title: "Recovery Room", desc: "Post-operative recovery room with close monitoring, oxygen supply, and patient beds.", tag: "Recovery" },
-  { src: "/images/equipment/ultrasound-machine.jpg", title: "Mindray DC-40 Ultrasound", desc: "State-of-the-art colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
-  { src: "/images/equipment/xray-machine.jpg", title: "Digital X-Ray Suite", desc: "High-resolution radiography for fast, accurate skeletal and chest imaging.", tag: "Radiology" },
-  { src: "/images/facilities/sterilization-room.jpg", title: "Sterilization Room", desc: "Autoclave sterilization ensuring every instrument meets international safety standards.", tag: "Safety" },
-  { src: "/images/patient-areas/outdoor-waiting-area.jpg", title: "Patient Waiting Area", desc: "Spacious and comfortable waiting area designed for a calm, reassuring experience.", tag: "Facilities" },
-  { src: "/images/patient-areas/indoor-reception.jpg", title: "24-Hour Reception", desc: "Always-staffed reception and triage area open around the clock for immediate attention.", tag: "Reception" },
+  { src: "/images/facilities/operating-room-1-wide.jpg", title: "Operating Theatre I", oromo: "Kutaa Baqaqsanii I", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
+  { src: "/images/team/medical-team.jpg", title: "Expert Medical Team", oromo: "Garee Ogeeyyii Fayyaa", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
+  { src: "/images/facilities/recovery-room.jpg", title: "Recovery Room", oromo: "Kutaa Fayyinaa", desc: "Kutaa booda baqaqsaniitti — post-operative recovery with close monitoring and oxygen supply.", tag: "Recovery" },
+  { src: "/images/equipment/ultrasound-machine.jpg", title: "Mindray DC-40 Ultrasound", oromo: "Meeshaa Ultrasound", desc: "Ultrasoond ammayyaa — colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
+  { src: "/images/equipment/xray-machine.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", desc: "Sakatta'a X-ray — high-resolution radiography for fast and accurate skeletal and chest imaging.", tag: "Radiology" },
+  { src: "/images/facilities/sterilization-room.jpg", title: "Sterilization Room", oromo: "Kutaa Qulqulleessuu", desc: "Qulqulleessuu meeshaalee — autoclave sterilization ensuring every instrument meets international safety standards.", tag: "Safety" },
+  { src: "/images/patient-areas/outdoor-waiting-area.jpg", title: "Patient Waiting Area", oromo: "Bakka Eeggannoo Dhukkubsataa", desc: "Bakka eeggannoo bal'aa fi nagaa — spacious and comfortable waiting area for a calm experience.", tag: "Facilities" },
+  { src: "/images/patient-areas/indoor-reception.jpg", title: "24-Hour Reception", oromo: "Simichaa Sa'aa 24", desc: "Sa'aa 24 banaa — always-staffed reception and triage area open around the clock.", tag: "Reception" },
 ];
 
 const tagStyles: Record<string, string> = {
@@ -79,6 +79,7 @@ export default function FacilitiesSection() {
 
               {/* Caption */}
               <div className="absolute bottom-14 left-5 right-16">
+                <p className="text-white/50 text-xs font-bold italic mb-0.5">{facilities[active].oromo}</p>
                 <h3 className="text-white font-black text-xl">{facilities[active].title}</h3>
                 <p className="text-white/70 text-sm mt-1">{facilities[active].desc}</p>
               </div>

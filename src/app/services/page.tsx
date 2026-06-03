@@ -144,8 +144,9 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <RevealOnScroll>
-            <h3 className="text-3xl font-black text-slate-900 mb-4">Have Questions About Our Services?</h3>
-            <p className="text-slate-500 mb-8 leading-relaxed">Nu quunnamaa — our medical team is available 24/7 to guide you to the right service.</p>
+            <h3 className="text-3xl font-black text-slate-900 mb-3">Have Questions About Our Services?</h3>
+            <p className="text-brand-red italic text-base mb-2 font-semibold">Gaafii qabdan nu gaafadhaa — Deebii sirraa siif kenninaa.</p>
+            <p className="text-slate-500 mb-8 leading-relaxed">Ask us anything — our medical team is available 24/7 to guide you to the right service.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-primary inline-flex">Contact Us <ArrowRight size={17} /></Link>
               <a href="tel:+251911728000" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-slate-200 text-slate-700 hover:border-brand-red hover:text-brand-red font-bold text-sm rounded-xl transition-all">

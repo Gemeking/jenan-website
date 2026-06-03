@@ -2,9 +2,21 @@ import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const values = [
-  { label: "Kaayyoo Keenya — Mission", oromo: "Dhukkubsataa hundaaf tajaajila addunyaa ol'aanaa kennuu.", en: "Delivering world-class surgical and medical care to every patient in Ethiopia, regardless of background." },
-  { label: "Hawwii Keenya — Vision", oromo: "Biyyoota Afrikaa Bahaa keessa wiirtuu baqaqsanii yaaluu cimaa ta'uu.", en: "To be the most trusted, advanced, and patient-centred surgical speciality center in East Africa." },
-  { label: "Gatii Keenya — Values", oromo: "Qulqullina · Nageenya · Kabaja · Hormaata · Hojii Gamtaa", en: "Excellence · Safety · Compassion · Integrity · Teamwork" },
+  {
+    label: "Kaayyoo Keenya — Mission",
+    oromo: "Dhukkubsataa hundaaf, aadaa fi qabeenya irraa adda osoo hin baasiin, tajaajila fayyaa addunyaa ol'aanaa kennuuf carraaqna.",
+    en: "Delivering world-class surgical and medical care to every patient in Ethiopia, regardless of background.",
+  },
+  {
+    label: "Hawwii Keenya — Vision",
+    oromo: "Wiirtuu baqaqsanii yaaluu kan amanamaa fi teknooloojii ammayyaa qabu ta'uun Afrikaa Bahaa keessatti fakkii taasisuu.",
+    en: "To be the most trusted, technologically advanced, and patient-centred surgical speciality center in East Africa.",
+  },
+  {
+    label: "Gatii Keenya — Values",
+    oromo: "Qulqullina · Nageenya · Kabaja · Dhugummaa · Hojii Gamtaa — Kunniin gatii hunda tarkaanfii keenyaa kan hogganuu dha.",
+    en: "Excellence · Safety · Compassion · Integrity · Teamwork — These values guide every step we take.",
+  },
 ];
 
 export default function TeamSection() {

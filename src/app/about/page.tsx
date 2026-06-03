@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2014", event: "Jenan Medical Center founded in Burayu, Addis Ababa" },
-  { year: "2016", event: "Expanded to full surgical suite with Operating Theatre I and II" },
-  { year: "2018", event: "Introduced advanced diagnostic imaging — X-ray and ultrasound" },
-  { year: "2020", event: "Launched full 24/7 emergency services" },
-  { year: "2022", event: "Upgraded to Mindray DC-40 colour Doppler ultrasound system" },
-  { year: "2024", event: "Relocated to Shaka Mall, Ashewa Meda for expanded capacity" },
+  { year: "2014", oromo: "Wiirtuu Jennaan bu'uurfame", event: "Jenan Medical Center founded in Burayu, Addis Ababa" },
+  { year: "2016", oromo: "Kutaa baqaqsanii lama baname", event: "Expanded to full surgical suite with Operating Theatre I and II" },
+  { year: "2018", oromo: "Sakatta'a ammayyaan jalqabame", event: "Introduced advanced diagnostic imaging — X-ray and ultrasound" },
+  { year: "2020", oromo: "Tajaajila hatattamaa sa'aa 24 baname", event: "Launched full 24/7 emergency services" },
+  { year: "2022", oromo: "Mindray DC-40 fudhatame", event: "Upgraded to Mindray DC-40 colour Doppler ultrasound system" },
+  { year: "2024", oromo: "Gara Shaka Mall, Ashewa Meda godaannamne", event: "Relocated to Shaka Mall, Ashewa Meda for expanded capacity" },
 ];
 
 const coreValues = [
@@ -69,7 +69,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-500 text-base leading-relaxed">
                 <p>Founded in Burayu, Addis Ababa, Jenan Medical Center began as a vision: to create a place where every Ethiopian could access the same level of surgical care found in the world&apos;s best hospitals.</p>
-                <p>Waggaa kurnan darbaniif, wiirtuun keenya xiqqaa ta&apos;e tokko irraa guddatee wiirtuu baqaqsanii yaaluu guutuu ta&apos;e — kutaa yaalaa lama, kutaa fayyaa argachuu, meeshaalee diagnostics ammayyaa, fi tajaajila hatattamaa sa&apos;aa 24 qabu.</p>
+                <p className="text-slate-700 italic border-l-2 border-brand-red pl-4 py-1">
+                  &ldquo;Waggaa kurnan darbaniif, wiirtuun keenya xiqqaa irraa guddatee wiirtuu baqaqsanii yaaluu guutuu ta&apos;e — kutaa yaalaa lama, kutaa fayyaa argachuu, meeshaalee diagnostics ammayyaa, fi tajaajila hatattamaa sa&apos;aa 24 qabu.&rdquo;
+                </p>
+                <p className="text-xs text-slate-400 italic">For over a decade, we grew from a small clinic into a full surgical speciality center with two theatres, a recovery ward, modern diagnostic equipment, and 24-hour emergency services.</p>
                 <p>Today, Jenan is proudly located at Shaka Mall, Ashewa Meda — more accessible and more capable than ever before.</p>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-8">
@@ -155,13 +158,14 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-red via-red-300 to-transparent" />
             <div className="space-y-7">
-              {milestones.map(({ year, event }, i) => (
+              {milestones.map(({ year, oromo, event }, i) => (
                 <RevealOnScroll key={i} direction="left" delay={i * 60}>
                   <div className="flex gap-6 items-start">
                     <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-red text-white font-black text-xs flex items-center justify-center shrink-0 shadow-md">
                       {year}
                     </div>
                     <div className="flex-1 card p-5 mt-2">
+                      <p className="text-brand-red text-xs font-bold italic mb-1">{oromo}</p>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 size={15} className="text-brand-red mt-0.5 shrink-0" />
                         <p className="text-slate-700 text-sm leading-relaxed">{event}</p>
