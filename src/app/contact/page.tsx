@@ -61,7 +61,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/65 to-slate-900/90" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
             We&apos;re Here to <span className="text-brand-red-mid">Help</span>
           </h1>
           <p className="text-brand-red-mid italic text-lg font-semibold mb-2">

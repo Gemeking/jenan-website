@@ -44,8 +44,8 @@ export default function StatsSection() {
       <div className="grid grid-cols-2 lg:grid-cols-4">
         {stats.map(({ value, suffix, label, oromo, bg, text }, i) => (
           <RevealOnScroll key={label} direction="up" delay={i * 60}>
-            <div className={`${bg} ${text} px-8 py-12 text-center`}>
-              <p className="text-5xl sm:text-6xl font-black mb-2 leading-none">
+            <div className={`${bg} ${text} px-4 sm:px-8 py-10 sm:py-12 text-center`}>
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-black mb-2 leading-none">
                 <Counter target={value} suffix={suffix} />
               </p>
               <p className="text-sm font-bold opacity-90 tracking-wide">{label}</p>

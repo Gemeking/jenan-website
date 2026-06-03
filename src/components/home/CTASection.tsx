@@ -5,8 +5,8 @@ import { Phone, ArrowRight } from "lucide-react";
 export default function CTASection() {
   return (
     <section className="relative py-24 overflow-hidden bg-gradient-to-br from-brand-red via-red-700 to-red-800">
-      <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/3" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-52 h-52 bg-white/5 rounded-full translate-y-1/3" />
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`, backgroundSize: "36px 36px" }} />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

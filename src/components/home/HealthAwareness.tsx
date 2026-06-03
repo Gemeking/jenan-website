@@ -66,7 +66,7 @@ export default function HealthAwareness() {
 
         {/* Bottom awareness strip */}
         <RevealOnScroll className="mt-8">
-          <div className="bg-slate-900 text-white rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="bg-slate-900 text-white rounded-2xl px-5 sm:px-8 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="font-black text-lg">Fayyaan Qabeenya.</p>
               <p className="text-slate-400 text-sm">Health is Wealth — Yeroo dhukkubsattan, nu bira jirra. We are here when you need us.</p>

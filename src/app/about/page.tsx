@@ -35,7 +35,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
             Ethiopia&apos;s Premier<br />
             <span className="text-brand-red-mid">Surgical Center</span>
           </h1>
