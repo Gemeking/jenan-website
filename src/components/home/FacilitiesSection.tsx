@@ -2,161 +2,108 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const facilities = [
-  {
-    src: "/images/facilities/operating-room-1-wide.jpg",
-    title: "Operating Room I",
-    desc: "Fully-equipped surgical suite with overhead lights, anesthesia machine, and complete instrumentation.",
-    tag: "Surgical",
-  },
-  {
-    src: "/images/team/medical-team.jpg",
-    title: "Our Expert Team",
-    desc: "Dedicated surgeons, nurses, and anaesthetists working together for outstanding patient outcomes.",
-    tag: "Team",
-  },
-  {
-    src: "/images/facilities/recovery-room.jpg",
-    title: "Recovery Room",
-    desc: "Comfortable post-operative recovery space with close monitoring and oxygen supply.",
-    tag: "Recovery",
-  },
-  {
-    src: "/images/equipment/ultrasound-machine.jpg",
-    title: "Mindray DC-40 Ultrasound",
-    desc: "State-of-the-art colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.",
-    tag: "Diagnostics",
-  },
-  {
-    src: "/images/equipment/xray-machine.jpg",
-    title: "Digital X-Ray Suite",
-    desc: "High-resolution radiography table enabling fast, accurate skeletal and chest imaging.",
-    tag: "Radiology",
-  },
-  {
-    src: "/images/facilities/sterilization-room.jpg",
-    title: "Sterilization Room",
-    desc: "Autoclave sterilization ensuring every instrument meets the highest safety standards.",
-    tag: "Safety",
-  },
-  {
-    src: "/images/patient-areas/outdoor-waiting-area.jpg",
-    title: "Patient Waiting Area",
-    desc: "Spacious and comfortable waiting area designed for a calm, reassuring patient experience.",
-    tag: "Facilities",
-  },
-  {
-    src: "/images/patient-areas/indoor-reception.jpg",
-    title: "24-Hour Reception",
-    desc: "Always-open reception and triage area staffed around the clock for immediate attention.",
-    tag: "Reception",
-  },
+  { src: "/images/facilities/operating-room-1-wide.jpg", title: "Operating Theatre I", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
+  { src: "/images/team/medical-team.jpg", title: "Expert Medical Team", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
+  { src: "/images/facilities/recovery-room.jpg", title: "Recovery Room", desc: "Post-operative recovery room with close monitoring, oxygen supply, and patient beds.", tag: "Recovery" },
+  { src: "/images/equipment/ultrasound-machine.jpg", title: "Mindray DC-40 Ultrasound", desc: "State-of-the-art colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
+  { src: "/images/equipment/xray-machine.jpg", title: "Digital X-Ray Suite", desc: "High-resolution radiography for fast, accurate skeletal and chest imaging.", tag: "Radiology" },
+  { src: "/images/facilities/sterilization-room.jpg", title: "Sterilization Room", desc: "Autoclave sterilization ensuring every instrument meets international safety standards.", tag: "Safety" },
+  { src: "/images/patient-areas/outdoor-waiting-area.jpg", title: "Patient Waiting Area", desc: "Spacious and comfortable waiting area designed for a calm, reassuring experience.", tag: "Facilities" },
+  { src: "/images/patient-areas/indoor-reception.jpg", title: "24-Hour Reception", desc: "Always-staffed reception and triage area open around the clock for immediate attention.", tag: "Reception" },
 ];
 
-const tagColors: Record<string, string> = {
-  Surgical: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  Team: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
-  Recovery: "bg-green-500/20 text-green-300 border-green-500/30",
-  Diagnostics: "bg-violet-500/20 text-violet-300 border-violet-500/30",
-  Radiology: "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
-  Safety: "bg-amber-500/20 text-amber-300 border-amber-500/30",
-  Facilities: "bg-slate-500/20 text-slate-300 border-slate-500/30",
-  Reception: "bg-pink-500/20 text-pink-300 border-pink-500/30",
+const tagStyles: Record<string, string> = {
+  Surgery: "bg-brand-red-light text-brand-red border-red-200",
+  Team: "bg-blue-50 text-blue-600 border-blue-200",
+  Recovery: "bg-emerald-50 text-emerald-600 border-emerald-200",
+  Diagnostics: "bg-violet-50 text-violet-600 border-violet-200",
+  Radiology: "bg-indigo-50 text-indigo-600 border-indigo-200",
+  Safety: "bg-amber-50 text-amber-600 border-amber-200",
+  Facilities: "bg-slate-50 text-slate-600 border-slate-200",
+  Reception: "bg-rose-50 text-rose-600 border-rose-200",
 };
 
 export default function FacilitiesSection() {
   const [active, setActive] = useState(0);
-
   const prev = () => setActive((a) => (a - 1 + facilities.length) % facilities.length);
   const next = () => setActive((a) => (a + 1) % facilities.length);
 
   return (
-    <section id="facilities" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-navy-800" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="facilities" className="section-alt py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-semibold tracking-[0.2em] uppercase mb-3">
-            Our Facilities
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+        <RevealOnScroll className="text-center mb-14">
+          <span className="section-badge">Ijaarsa Keenya — Our Facilities</span>
+          <div className="red-rule mx-auto mt-4 mb-5" />
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
             World-Class{" "}
-            <span className="gradient-text">Infrastructure</span>
+            <span className="gradient-text-red">Infrastructure</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Every room and piece of equipment at Jenan is chosen to deliver the safest and most effective care possible.
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            Every room, instrument, and piece of equipment at Jenan is chosen to deliver the safest and most effective care possible.
           </p>
-        </div>
+        </RevealOnScroll>
 
-        {/* Main image + info */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
-          {/* Big image */}
-          <div className="lg:col-span-3 relative rounded-3xl overflow-hidden group" style={{ minHeight: 400 }}>
-            <Image
-              src={facilities[active].src}
-              alt={facilities[active].title}
-              fill
-              className="object-cover transition-all duration-700"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent" />
-            {/* Tag */}
-            <div className="absolute top-4 left-4">
-              <span className={`px-3 py-1 rounded-full text-xs font-semibold border backdrop-blur-sm ${tagColors[facilities[active].tag]}`}>
-                {facilities[active].tag}
-              </span>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 items-stretch">
+          {/* Main image */}
+          <RevealOnScroll direction="left" className="lg:col-span-3">
+            <div className="relative rounded-2xl overflow-hidden shadow-card-hover" style={{ minHeight: 420 }}>
+              <Image
+                src={facilities[active].src}
+                alt={facilities[active].title}
+                fill
+                className="object-cover transition-all duration-700"
+                sizes="(max-width:1024px) 100vw, 60vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
+
+              {/* Tag */}
+              <div className="absolute top-4 left-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-bold border ${tagStyles[facilities[active].tag]}`}>
+                  {facilities[active].tag}
+                </span>
+              </div>
+
+              {/* Nav */}
+              <div className="absolute bottom-4 right-4 flex gap-2">
+                <button onClick={prev} className="w-9 h-9 rounded-xl bg-white/90 hover:bg-white flex items-center justify-center text-slate-700 shadow transition-all">
+                  <ChevronLeft size={17} />
+                </button>
+                <button onClick={next} className="w-9 h-9 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white flex items-center justify-center shadow transition-all">
+                  <ChevronRight size={17} />
+                </button>
+              </div>
+
+              {/* Caption */}
+              <div className="absolute bottom-14 left-5 right-16">
+                <h3 className="text-white font-black text-xl">{facilities[active].title}</h3>
+                <p className="text-white/70 text-sm mt-1">{facilities[active].desc}</p>
+              </div>
             </div>
-            {/* Nav arrows */}
-            <div className="absolute bottom-4 right-4 flex gap-2">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-xl glass border border-white/10 hover:border-blue-400/40 flex items-center justify-center text-white transition-all hover:bg-blue-600/20"
-                aria-label="Previous"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-xl glass border border-white/10 hover:border-blue-400/40 flex items-center justify-center text-white transition-all hover:bg-blue-600/20"
-                aria-label="Next"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-            {/* Title overlay */}
-            <div className="absolute bottom-14 left-5 right-16">
-              <h3 className="text-xl font-bold text-white">{facilities[active].title}</h3>
-              <p className="text-slate-300 text-sm mt-1">{facilities[active].desc}</p>
-            </div>
-          </div>
+          </RevealOnScroll>
 
           {/* Thumbnail grid */}
-          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3">
-            {facilities.map((f, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                className={`relative rounded-2xl overflow-hidden transition-all duration-300 ${
-                  i === active
-                    ? "ring-2 ring-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.5)]"
-                    : "opacity-60 hover:opacity-90"
-                }`}
-                style={{ height: 110 }}
-              >
-                <Image src={f.src} alt={f.title} fill className="object-cover" sizes="200px" />
-                <div className={`absolute inset-0 ${i === active ? "bg-blue-600/10" : "bg-navy-900/20"}`} />
-                {i === active && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ZoomIn size={16} className="text-white opacity-80" />
-                  </div>
-                )}
-              </button>
-            ))}
-          </div>
+          <RevealOnScroll direction="right" className="lg:col-span-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 h-full">
+              {facilities.map((f, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`relative rounded-xl overflow-hidden transition-all duration-300 ${
+                    i === active ? "ring-2 ring-brand-red shadow-md" : "opacity-70 hover:opacity-100"
+                  }`}
+                  style={{ height: 100 }}
+                >
+                  <Image src={f.src} alt={f.title} fill className="object-cover" sizes="180px" />
+                  <div className={`absolute inset-0 ${i === active ? "bg-brand-red/10" : "bg-transparent"}`} />
+                </button>
+              ))}
+            </div>
+          </RevealOnScroll>
         </div>
 
         {/* Dot indicators */}
@@ -165,10 +112,7 @@ export default function FacilitiesSection() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === active ? "w-8 h-2 bg-blue-500" : "w-2 h-2 bg-slate-600 hover:bg-slate-400"
-              }`}
-              aria-label={`Go to ${i + 1}`}
+              className={`transition-all duration-300 rounded-full ${i === active ? "w-7 h-2 bg-brand-red" : "w-2 h-2 bg-slate-300 hover:bg-slate-400"}`}
             />
           ))}
         </div>

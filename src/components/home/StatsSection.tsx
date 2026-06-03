@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { Users, Stethoscope, Building2, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: 5000, suffix: "+", label: "Patients Treated", color: "text-blue-400", glow: "rgba(59,130,246,0.3)" },
-  { icon: Stethoscope, value: 1200, suffix: "+", label: "Surgeries Performed", color: "text-cyan-400", glow: "rgba(6,182,212,0.3)" },
-  { icon: Building2, value: 10, suffix: "+", label: "Years of Excellence", color: "text-gold-400", glow: "rgba(245,158,11,0.3)" },
-  { icon: Clock, value: 24, suffix: "/7", label: "Emergency Available", color: "text-green-400", glow: "rgba(74,222,128,0.3)" },
+  { icon: Users, value: 5000, suffix: "+", label: "Patients Treated", oromo: "Dhukkubsataa Yaalame", color: "text-brand-red", bg: "bg-brand-red-light border-red-200" },
+  { icon: Stethoscope, value: 1200, suffix: "+", label: "Surgeries Performed", oromo: "Baqaqsanii Yaaluu", color: "text-blue-600", bg: "bg-blue-50 border-blue-200" },
+  { icon: Building2, value: 10, suffix: "+", label: "Years of Excellence", oromo: "Waggaa Tajaajilaaf", color: "text-brand-red", bg: "bg-brand-red-light border-red-200" },
+  { icon: Clock, value: 24, suffix: "/7", label: "Emergency Available", oromo: "Banaa Sa'aa 24", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -20,13 +21,12 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-          const duration = 2000;
-          const step = target / (duration / 16);
-          let current = 0;
-          const timer = setInterval(() => {
-            current = Math.min(current + step, target);
-            setCount(Math.floor(current));
-            if (current >= target) clearInterval(timer);
+          const step = target / (1800 / 16);
+          let c = 0;
+          const t = setInterval(() => {
+            c = Math.min(c + step, target);
+            setCount(Math.floor(c));
+            if (c >= target) clearInterval(t);
           }, 16);
         }
       },
@@ -36,43 +36,27 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
     return () => observer.disconnect();
   }, [target]);
 
-  return (
-    <span ref={ref}>
-      {count.toLocaleString()}{suffix}
-    </span>
-  );
+  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
 export default function StatsSection() {
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900" />
-      <div className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {stats.map(({ icon: Icon, value, suffix, label, color, glow }) => (
-            <div
-              key={label}
-              className="group glass border border-white/8 rounded-2xl p-6 sm:p-8 text-center hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1"
-              style={{ boxShadow: `0 4px 32px rgba(0,0,0,0.3)` }}
-            >
-              <div
-                className="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center"
-                style={{ background: `${glow}`, boxShadow: `0 0 20px ${glow}` }}
-              >
-                <Icon size={22} className={color} />
+    <section className="section-white py-16 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 stagger">
+          {stats.map(({ icon: Icon, value, suffix, label, oromo, color, bg }, i) => (
+            <RevealOnScroll key={label} direction="up" delay={i * 80}>
+              <div className={`card border ${bg} p-6 sm:p-8 text-center`}>
+                <div className={`w-11 h-11 rounded-xl ${bg} border flex items-center justify-center mx-auto mb-4`}>
+                  <Icon size={20} className={color} />
+                </div>
+                <p className={`text-4xl sm:text-5xl font-black ${color} mb-1`}>
+                  <Counter target={value} suffix={suffix} />
+                </p>
+                <p className="text-slate-700 text-sm font-semibold">{label}</p>
+                <p className="text-slate-400 text-xs mt-0.5 italic">{oromo}</p>
               </div>
-              <p className={`text-4xl sm:text-5xl font-bold ${color} mb-1`}>
-                <Counter target={value} suffix={suffix} />
-              </p>
-              <p className="text-slate-400 text-sm mt-1">{label}</p>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

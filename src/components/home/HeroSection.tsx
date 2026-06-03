@@ -1,184 +1,194 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Shield, Clock, Award } from "lucide-react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import { ArrowRight, Phone, Shield, Clock, ChevronDown } from "lucide-react";
 
-function MedicalCross() {
-  return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      {/* Outer ring */}
-      <div className="absolute w-72 h-72 rounded-full border border-blue-500/20 animate-spin-slow" />
-      <div className="absolute w-56 h-56 rounded-full border border-cyan-500/15 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "15s" }} />
-      {/* Glowing orb */}
-      <div className="absolute w-40 h-40 rounded-full bg-gradient-radial from-blue-600/30 via-blue-900/20 to-transparent blur-xl animate-pulse-slow" />
-      {/* Medical cross */}
-      <div className="relative w-28 h-28 animate-float">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-600/40 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 shadow-[0_0_60px_rgba(37,99,235,0.5)]" />
-        {/* Cross shape */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative">
-            <div className="w-14 h-5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-90" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-14 bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full opacity-90" />
-          </div>
-        </div>
-        {/* Shine */}
-        <div className="absolute top-2 left-3 w-8 h-1.5 bg-white/20 rounded-full blur-sm" />
-      </div>
-      {/* Orbiting dots */}
-      {[0, 60, 120, 180, 240, 300].map((deg, i) => (
-        <div
-          key={i}
-          className="absolute w-2 h-2 rounded-full bg-blue-400/60"
-          style={{
-            transform: `rotate(${deg}deg) translateX(120px)`,
-            animation: `spin 20s linear infinite`,
-            animationDelay: `${i * -3}s`,
-            opacity: 0.4 + (i % 3) * 0.2,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+const MedicalCross3D = dynamic(
+  () => import("@/components/ui/MedicalCross3D"),
+  { ssr: false, loading: () => <div className="w-full h-full" /> }
+);
 
-function Particles() {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 4 + 1,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    duration: 4 + Math.random() * 6,
-    delay: Math.random() * 4,
-    opacity: 0.1 + Math.random() * 0.3,
-  }));
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="particle bg-blue-400/40"
-          style={{
-            width: p.size,
-            height: p.size,
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            opacity: p.opacity,
-            "--duration": `${p.duration}s`,
-            "--delay": `${p.delay}s`,
-          } as React.CSSProperties}
-        />
-      ))}
-    </div>
-  );
-}
+const slides = [
+  {
+    src: "/images/team/medical-team.jpg",
+    label: "Surgical Excellence",
+  },
+  {
+    src: "/images/facilities/operating-room-1-wide.jpg",
+    label: "Advanced Operating Theatres",
+  },
+  {
+    src: "/images/patient-areas/indoor-reception.jpg",
+    label: "24-Hour Emergency Care",
+  },
+  {
+    src: "/images/facilities/hospital-corridor.jpg",
+    label: "Modern Facilities",
+  },
+  {
+    src: "/images/equipment/ultrasound-machine.jpg",
+    label: "Precision Diagnostics",
+  },
+];
 
 export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPrev(current);
+      setCurrent((c) => (c + 1) % slides.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const goTo = (i: number) => {
+    if (i === current) return;
+    setPrev(current);
+    setCurrent(i);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-navy-900" />
-      <div className="absolute inset-0 bg-hero-glow" />
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-      {/* Blue glow blobs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-3xl" />
+      {/* ── Background slideshow ── */}
+      <div className="absolute inset-0">
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className="hero-image-slide"
+            style={{ opacity: i === current ? 1 : 0 }}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.label}
+              fill
+              priority={i === 0}
+              className={`object-cover ${i === current ? "animate-ken-burns" : ""}`}
+              sizes="100vw"
+            />
+          </div>
+        ))}
 
-      <Particles />
+        {/* Multi-layer overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left — Text */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/25 text-sm">
+      {/* ── Content ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[82vh]">
+
+          {/* LEFT — text */}
+          <div className="space-y-7">
+            {/* Live badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/8 backdrop-blur-sm text-sm text-white/90">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-slate-300">Open 24/7 — Emergency Care Available</span>
+              Banaa Sa&apos;aa 24 — Tajaajila Hatattamaa Jira
             </div>
 
-            {/* Headline */}
+            {/* Oromo name */}
+            <p className="text-brand-red-mid text-sm font-bold tracking-[0.22em] uppercase">
+              Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan
+            </p>
+
+            {/* Main headline */}
             <div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-                <span className="text-white">Jenan</span>{" "}
+              <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-white leading-[1.02] tracking-tight">
+                Jenan
                 <br />
-                <span className="gradient-text">Surgical</span>
+                <span className="text-brand-red-mid">Surgical</span>
                 <br />
-                <span className="text-white text-4xl sm:text-5xl lg:text-6xl font-light">Speciality Center</span>
+                <span className="text-3xl sm:text-4xl xl:text-5xl font-light tracking-wide">
+                  Speciality Center
+                </span>
               </h1>
             </div>
 
-            {/* Subtitle */}
-            <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
-              Ethiopia's premier surgical center delivering world-class medical excellence. Advanced procedures, compassionate care, and cutting-edge technology — all under one roof in Addis Ababa.
+            {/* Sub headline */}
+            <p className="text-white/75 text-lg leading-relaxed max-w-lg">
+              Ethiopia&apos;s premier surgical speciality center. Advanced procedures, compassionate care, and world-class facilities — available to you every hour of every day.
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/services"
-                className="group flex items-center gap-2 px-7 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold rounded-2xl transition-all duration-300 shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-0.5"
-              >
+            {/* Oromo sub-message */}
+            <p className="text-white/50 text-sm italic border-l-2 border-brand-red pl-3 leading-relaxed">
+              &ldquo;Dhibee qabdan otoo hin turin gara mana yaalaa keenya dhufaa — tajaajila guutuu argattan.&rdquo;
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3">
+              <Link href="/services" className="btn-primary">
                 Explore Services
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={17} />
               </Link>
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 px-7 py-4 glass border border-white/10 hover:border-blue-500/40 text-white font-semibold rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Book Appointment
+              <Link href="/contact" className="btn-outline">
+                <Phone size={17} />
+                Contact Us
               </Link>
             </div>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-5 pt-2">
+            {/* Trust strip */}
+            <div className="flex flex-wrap gap-5 pt-1">
               {[
-                { icon: Shield, label: "Certified Excellence" },
-                { icon: Clock, label: "24/7 Emergency" },
-                { icon: Award, label: "Surgical Experts" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-sm text-slate-400">
-                  <Icon size={15} className="text-blue-400" />
-                  <span>{label}</span>
-                </div>
+                { icon: Shield, text: "Certified Excellence" },
+                { icon: Clock, text: "24 / 7 Emergency" },
+              ].map(({ icon: Icon, text }) => (
+                <span key={text} className="flex items-center gap-2 text-sm text-white/70">
+                  <Icon size={14} className="text-brand-red-mid" />
+                  {text}
+                </span>
               ))}
             </div>
           </div>
 
-          {/* Right — 3D illustration */}
-          <div className="relative flex items-center justify-center h-[420px] lg:h-[520px]">
-            <MedicalCross />
+          {/* RIGHT — 3D cross */}
+          <div className="hidden lg:flex items-center justify-center relative h-[500px]">
+            {/* Glow behind cross */}
+            <div className="absolute w-72 h-72 rounded-full bg-brand-red/15 blur-3xl" />
+            <MedicalCross3D className="w-full h-full" />
 
-            {/* Floating stat cards */}
-            <div className="absolute top-8 right-0 glass border border-white/10 rounded-2xl px-5 py-4 animate-float" style={{ animationDelay: "0.5s" }}>
-              <p className="text-3xl font-bold gradient-text-blue">10+</p>
-              <p className="text-xs text-slate-400 mt-0.5">Years of Excellence</p>
+            {/* Floating stat card — top right */}
+            <div className="absolute top-12 right-0 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float">
+              <p className="text-2xl font-black text-white">5,000+</p>
+              <p className="text-xs text-white/60 mt-0.5">Patients Treated</p>
             </div>
 
-            <div className="absolute bottom-16 left-0 glass border border-white/10 rounded-2xl px-5 py-4 animate-float-delay">
-              <p className="text-3xl font-bold text-green-400">5,000+</p>
-              <p className="text-xs text-slate-400 mt-0.5">Patients Treated</p>
-            </div>
-
-            <div className="absolute bottom-4 right-8 glass border border-white/10 rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "1s" }}>
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <p className="text-xs text-slate-300 font-medium">Available Now</p>
-              </div>
+            {/* Floating stat card — bottom left */}
+            <div
+              className="absolute bottom-16 left-0 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float-slow"
+            >
+              <p className="text-2xl font-black text-white">10+</p>
+              <p className="text-xs text-white/60 mt-0.5">Years of Excellence</p>
             </div>
           </div>
         </div>
+
+        {/* ── Slide indicator ── */}
+        <div className="flex items-center gap-3 mt-4">
+          {slides.map((s, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`h-1 rounded-full transition-all duration-500 ${
+                i === current ? "w-10 bg-brand-red" : "w-2 bg-white/35 hover:bg-white/60"
+              }`}
+              aria-label={s.label}
+            />
+          ))}
+          <span className="ml-2 text-white/40 text-xs">{slides[current].label}</span>
+        </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-navy-900 to-transparent pointer-events-none" />
+      {/* ── Scroll cue ── */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 animate-bounce">
+        <ChevronDown size={22} />
+      </div>
+
+      {/* Bottom fade into white */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );
 }

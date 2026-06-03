@@ -1,72 +1,77 @@
 import Image from "next/image";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const values = [
-  { label: "Mission", text: "To deliver world-class surgical and medical care to every patient in Ethiopia, regardless of background." },
-  { label: "Vision", text: "To be the most trusted and advanced surgical speciality center in East Africa." },
-  { label: "Values", text: "Excellence · Compassion · Integrity · Safety · Innovation" },
+  { label: "Kaayyoo Keenya — Mission", oromo: "Dhukkubsataa hundaaf tajaajila addunyaa ol'aanaa kennuu.", en: "Delivering world-class surgical and medical care to every patient in Ethiopia, regardless of background." },
+  { label: "Hawwii Keenya — Vision", oromo: "Biyyoota Afrikaa Bahaa keessa wiirtuu baqaqsanii yaaluu cimaa ta'uu.", en: "To be the most trusted, advanced, and patient-centred surgical speciality center in East Africa." },
+  { label: "Gatii Keenya — Values", oromo: "Qulqullina · Nageenya · Kabaja · Hormaata · Hojii Gamtaa", en: "Excellence · Safety · Compassion · Integrity · Teamwork" },
 ];
 
 export default function TeamSection() {
   return (
-    <section className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-navy-800" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="section-white py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-semibold tracking-[0.2em] uppercase mb-3">
-            Our People
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+        <RevealOnScroll className="text-center mb-14">
+          <span className="section-badge">Nama Keenya — Our People</span>
+          <div className="red-rule mx-auto mt-4 mb-5" />
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
             The Team Behind{" "}
-            <span className="gradient-text">Your Care</span>
+            <span className="gradient-text-red">Your Care</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            A dedicated group of experienced surgeons, nurses, anesthesiologists, and support staff committed to your health and recovery.
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            A dedicated group of experienced surgeons, nurses, anaesthesiologists, and support staff committed to your health and recovery.
           </p>
-        </div>
+        </RevealOnScroll>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Team photo */}
-          <div className="relative rounded-3xl overflow-hidden" style={{ height: 420 }}>
-            <Image
-              src="/images/team/medical-team.jpg"
-              alt="Jenan Medical Team"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="glass border border-white/10 rounded-2xl px-5 py-4">
-                <p className="text-white font-semibold text-sm mb-1">Multidisciplinary Team</p>
-                <p className="text-slate-400 text-xs">
-                  Surgeons · Anaesthetists · Scrub Nurses · Radiologists · Recovery Nurses
-                </p>
+          <RevealOnScroll direction="left">
+            <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 440 }}>
+              <Image
+                src="/images/team/medical-team.jpg"
+                alt="Jenan Medical Team"
+                fill
+                className="object-cover"
+                sizes="(max-width:1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/65 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg">
+                  <p className="text-slate-900 font-black text-sm">Multidisciplinary Team</p>
+                  <p className="text-slate-500 text-xs mt-0.5">
+                    Surgeons · Anaesthetists · Scrub Nurses · Radiologists · Recovery Nurses
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </RevealOnScroll>
 
-          {/* Mission / vision / values */}
-          <div className="space-y-5">
-            {values.map(({ label, text }) => (
-              <div
-                key={label}
-                className="glass border border-white/7 hover:border-blue-500/30 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <p className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-2">{label}</p>
-                <p className="text-slate-300 text-sm leading-relaxed">{text}</p>
-              </div>
+          {/* Mission / Vision / Values */}
+          <div className="space-y-4">
+            {values.map(({ label, oromo, en }, i) => (
+              <RevealOnScroll key={label} direction="right" delay={i * 100}>
+                <div className="card p-6 hover:border-red-200">
+                  <p className="text-brand-red text-xs font-black tracking-widest uppercase mb-2">{label}</p>
+                  <p className="text-slate-900 text-sm font-semibold mb-1 italic">{oromo}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed">{en}</p>
+                </div>
+              </RevealOnScroll>
             ))}
 
-            {/* Tagline card */}
-            <div className="relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-blue-600/20 to-cyan-600/10 border border-blue-500/25">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl" />
-              <p className="text-2xl font-bold text-white italic relative z-10">
-                &ldquo;Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan&rdquo;
-              </p>
-              <p className="text-blue-300 text-sm mt-2 relative z-10">— We Serve You!!</p>
-            </div>
+            {/* Oromo tagline */}
+            <RevealOnScroll direction="right" delay={300}>
+              <div className="relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-brand-red to-red-700 text-white">
+                <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-2xl" />
+                <p className="text-xl font-black italic relative z-10">
+                  &ldquo;Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan&rdquo;
+                </p>
+                <p className="text-white/80 text-sm mt-2 relative z-10 font-semibold">
+                  — Isiniif Tajaajilna. We Serve You!!
+                </p>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </div>
