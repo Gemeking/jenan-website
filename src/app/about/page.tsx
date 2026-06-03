@@ -31,7 +31,7 @@ export default function AboutPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/facilities/hospital-corridor.jpg" alt="Jenan Corridor" fill className="object-cover opacity-30" />
+          <Image src="/images/building-exterior.jpg" alt="Jenan Surgical Center Building" fill className="object-cover opacity-45" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -93,7 +93,7 @@ export default function ServicesPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Services" fill className="object-cover opacity-25" />
+          <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Operating Theatre" fill className="object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

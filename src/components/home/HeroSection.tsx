@@ -8,8 +8,8 @@ import MedicalCross3D from "@/components/ui/MedicalCross3D";
 
 const slides = [
   {
-    src: "/images/team/medical-team.jpg",
-    label: "Surgical Excellence",
+    src: "/images/building-exterior.jpg",
+    label: "Jenan Surgical Center",
   },
   {
     src: "/images/facilities/operating-room-1-wide.jpg",
