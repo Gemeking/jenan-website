@@ -11,42 +11,36 @@ const services = [
     oromo: "Baqaqsanii Yaaluu",
     description: "Advanced surgical procedures by expert surgeons using state-of-the-art equipment and internationally-recognised techniques.",
     image: "/images/facilities/operating-room-1.jpg",
-    accent: "#DC2626",
   },
   {
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
     description: "Specialised medical and surgical care designed for infants, children, and adolescents with compassion and clinical precision.",
     image: "/images/facilities/operating-room-2-entrance.jpg",
-    accent: "#2563EB",
   },
   {
     title: "Maternal Care",
     oromo: "Haadha Yaaluu",
     description: "Comprehensive obstetric and gynaecological care ensuring the safety and wellbeing of mothers and newborns throughout the journey.",
     image: "/images/facilities/recovery-room.jpg",
-    accent: "#E11D48",
   },
   {
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
     description: "In-house X-ray, Mindray DC-40 colour Doppler ultrasound, and digital radiology workstation for fast, accurate diagnosis.",
     image: "/images/equipment/ultrasound-machine.jpg",
-    accent: "#7C3AED",
   },
   {
     title: "Emergency Care",
     oromo: "Hatattamaa Yaaluu",
     description: "Our emergency team is on standby around the clock — day or night — ready to respond to any medical or surgical crisis.",
     image: "/images/patient-areas/indoor-reception.jpg",
-    accent: "#D97706",
   },
   {
     title: "Sterilization & Safety",
     oromo: "Qulqullina Eeggannoo",
     description: "Hospital-grade autoclave sterilization and strict WHO infection-control protocols guarantee the highest safety standards.",
     image: "/images/facilities/sterilization-room.jpg",
-    accent: "#059669",
   },
 ];
 
@@ -67,10 +61,12 @@ export default function ServicesSection() {
         </RevealOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map(({ title, oromo, description, image, accent }, i) => (
+          {services.map(({ title, oromo, description, image }, i) => (
             <RevealOnScroll key={title} direction="up" delay={i * 70}>
-              <div className="group relative rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1" style={{ height: 320 }}>
-                {/* Background image */}
+              <div
+                className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18)]"
+                style={{ height: 320 }}
+              >
                 <Image
                   src={image}
                   alt={title}
@@ -78,20 +74,13 @@ export default function ServicesSection() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                 />
-
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/92 via-slate-900/55 to-slate-900/15" />
 
-                {/* Color accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1" style={{ background: accent }} />
-
-                {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <p className="text-white/55 text-xs font-bold tracking-widest uppercase mb-1">{oromo}</p>
+                  <p className="text-white/50 text-xs font-bold tracking-widest uppercase mb-1">{oromo}</p>
                   <h3 className="text-white text-xl font-black mb-2">{title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed line-clamp-2">{description}</p>
-                  <div className="flex items-center gap-1.5 text-xs font-bold mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ color: accent === "#DC2626" ? "#FCA5A5" : "#93C5FD" }}>
+                  <p className="text-white/65 text-sm leading-relaxed line-clamp-2">{description}</p>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-white/50 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>Learn more</span>
                     <ArrowRight size={12} />
                   </div>

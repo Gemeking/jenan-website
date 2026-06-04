@@ -63,7 +63,7 @@ export default function TeamSection() {
           <div className="space-y-4">
             {values.map(({ label, oromo, en }, i) => (
               <RevealOnScroll key={label} direction="right" delay={i * 100}>
-                <div className="card p-6 hover:border-red-200">
+                <div className="card p-6">
                   <p className="text-brand-red text-xs font-black tracking-widest uppercase mb-2">{label}</p>
                   <p className="text-slate-900 text-sm font-semibold mb-1 italic">{oromo}</p>
                   <p className="text-slate-500 text-sm leading-relaxed">{en}</p>

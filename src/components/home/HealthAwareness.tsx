@@ -46,19 +46,14 @@ export default function HealthAwareness() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {messages.map(({ oromo, english, source }, i) => (
             <RevealOnScroll key={i} direction={i % 2 === 0 ? "left" : "right"} delay={i * 60}>
-              <div className="relative bg-white border border-slate-200 rounded-2xl p-7 hover:border-red-200 hover:shadow-card-hover transition-all duration-300 overflow-hidden">
-                {/* Red corner accent */}
-                <div className="absolute top-0 left-0 w-1 h-full bg-brand-red rounded-l-2xl" />
+              <div className="relative bg-white border border-slate-200 rounded-2xl p-7 hover:shadow-[0_8px_36px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <p className="text-slate-400 text-xs font-black tracking-widest uppercase mb-3">{source}</p>
 
-                <p className="text-slate-400 text-xs font-black tracking-widest uppercase mb-3 pl-4">{source}</p>
-
-                {/* Oromo text — prominent */}
-                <blockquote className="text-slate-900 text-base font-semibold leading-relaxed mb-3 pl-4 italic">
+                <blockquote className="text-slate-900 text-base font-semibold leading-relaxed mb-3 italic">
                   &ldquo;{oromo}&rdquo;
                 </blockquote>
 
-                {/* English translation */}
-                <p className="text-slate-500 text-sm leading-relaxed pl-4">{english}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{english}</p>
               </div>
             </RevealOnScroll>
           ))}

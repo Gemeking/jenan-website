@@ -19,10 +19,10 @@ const milestones = [
 ];
 
 const coreValues = [
-  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/facilities/recovery-room.jpg", color: "#DC2626" },
-  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/facilities/sterilization-room.jpg", color: "#059669" },
-  { label: "Excellence", oromo: "Qulqullina", desc: "World-class standards in every procedure performed.", image: "/images/facilities/operating-room-1.jpg", color: "#2563EB" },
-  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/team/medical-team.jpg", color: "#7C3AED" },
+  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/facilities/recovery-room.jpg" },
+  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/facilities/sterilization-room.jpg" },
+  { label: "Excellence", oromo: "Qulqullina", desc: "World-class standards in every procedure performed.", image: "/images/facilities/operating-room-1.jpg" },
+  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/team/medical-team.jpg" },
 ];
 
 export default function AboutPage() {
@@ -131,12 +131,11 @@ export default function AboutPage() {
             <p className="text-slate-500 text-lg max-w-xl mx-auto">Gatii keenya — These principles guide everything we do.</p>
           </RevealOnScroll>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {coreValues.map(({ label, oromo, desc, image, color }, i) => (
+            {coreValues.map(({ label, oromo, desc, image }, i) => (
               <RevealOnScroll key={label} direction="up" delay={i * 80}>
                 <div className="relative rounded-2xl overflow-hidden group" style={{ height: 220 }}>
                   <Image src={image} alt={label} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:640px) 50vw, 25vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent" />
-                  <div className="absolute top-0 left-0 right-0 h-1" style={{ background: color }} />
                   <div className="absolute inset-0 p-4 flex flex-col justify-end">
                     <p className="text-xs font-bold opacity-60 text-white italic mb-0.5">{oromo}</p>
                     <p className="text-white font-black text-base mb-1">{label}</p>

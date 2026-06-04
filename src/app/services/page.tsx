@@ -93,7 +93,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {mainServices.map(({ title, oromo, borderColor, image, description, features }, idx) => (
             <RevealOnScroll key={title} direction={idx % 2 === 0 ? "left" : "right"}>
-              <div className="card overflow-hidden" style={{ borderLeft: `4px solid ${borderColor}` }}>
+              <div className="card overflow-hidden">
                 <div className={`grid grid-cols-1 lg:grid-cols-2`}>
                   <div className={`relative ${idx % 2 === 1 ? "lg:order-2" : ""}`} style={{ minHeight: 280 }}>
                     <Image src={image} alt={title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
@@ -129,8 +129,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {additionalServices.map(({ name, oromo }, i) => (
               <RevealOnScroll key={name} direction="up" delay={i * 60}>
-                <div className="card p-5 text-center hover:border-red-200 hover:-translate-y-0.5 transition-all duration-200">
-                  <div className="h-1 w-8 bg-brand-red rounded mx-auto mb-3" />
+                <div className="card p-5 text-center">
+                  <div className="h-0.5 w-8 bg-slate-200 rounded mx-auto mb-3" />
                   <p className="text-slate-700 text-xs font-black leading-tight">{name}</p>
                   <p className="text-slate-400 text-xs italic mt-0.5">{oromo}</p>
                 </div>

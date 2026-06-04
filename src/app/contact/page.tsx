@@ -79,7 +79,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {contactInfo.map(({ icon: Icon, label, lines, href, iconBg, iconColor }, i) => (
               <RevealOnScroll key={label} direction="up" delay={i * 80}>
-                <div className="card p-7 hover:border-red-200 flex gap-5 items-start">
+                <div className="card p-7 flex gap-5 items-start">
                   <div className={`w-13 h-13 rounded-xl border ${iconBg} flex items-center justify-center shrink-0 p-3`}>
                     <Icon size={22} className={iconColor} />
                   </div>
