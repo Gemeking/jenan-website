@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
-              Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan — Ethiopia&apos;s premier surgical speciality center delivering world-class care.
+              Wiirtuu Baqaqsanii Yaaluu Jennaan — Ethiopia&apos;s premier surgical speciality center delivering world-class care.
             </p>
             <div className="flex gap-3">
               {[

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Jenan Surgical Speciality Center | Yaalii Baqaqsanii Yaaluu Ol'aanaa Jennaan",
+  title: "Jenan Surgical Speciality Center | Wiirtuu Baqaqsanii Yaaluu Jennaan",
   description: "Ethiopia's premier surgical speciality center. Advanced surgical procedures, diagnostic imaging, maternal and pediatric care — 24/7 in Addis Ababa, Burayu.",
   keywords: ["Jenan Medical Center", "surgical center Ethiopia", "Addis Ababa hospital", "Burayu clinic"],
 };

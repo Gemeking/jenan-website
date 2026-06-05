@@ -76,7 +76,7 @@ export default function TeamSection() {
               <div className="relative rounded-2xl overflow-hidden p-6 bg-gradient-to-br from-brand-red to-red-700 text-white">
                 <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-2xl" />
                 <p className="text-xl font-black italic relative z-10">
-                  &ldquo;Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan&rdquo;
+                  &ldquo;Wiirtuu Baqaqsanii Yaaluu Jennaan&rdquo;
                 </p>
                 <p className="text-white/80 text-sm mt-2 relative z-10 font-semibold">
                   — Isiniif Tajaajilna. We Serve You!!

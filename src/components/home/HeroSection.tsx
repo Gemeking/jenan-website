@@ -67,7 +67,7 @@ export default function HeroSection() {
 
             {/* Oromo subtitle */}
             <p className="text-brand-red-mid text-sm font-bold tracking-[0.2em] uppercase hero-sub-shadow">
-              Yaalii Baqaqsanii Yaaluu Ol&apos;aanaa Jennaan
+              Wiirtuu Baqaqsanii Yaaluu Jennaan
             </p>
 
             {/* Main headline */}
