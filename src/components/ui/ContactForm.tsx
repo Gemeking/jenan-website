@@ -44,20 +44,20 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Full Name *</label>
+          <label className="block text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Full Name *</label>
           <input name="name" required value={form.name} onChange={handleChange} placeholder="Your full name" className={inputCls} />
         </div>
         <div>
-          <label className="block text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Phone *</label>
+          <label className="block text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Phone *</label>
           <input name="phone" required value={form.phone} onChange={handleChange} placeholder="09xx xxx xxx" className={inputCls} />
         </div>
       </div>
       <div>
-        <label className="block text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Email Address</label>
+        <label className="block text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Email Address</label>
         <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className={inputCls} />
       </div>
       <div>
-        <label className="block text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Service Needed</label>
+        <label className="block text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Service Needed</label>
         <select name="service" value={form.service} onChange={handleChange} className={inputCls}>
           <option value="">Select a service...</option>
           <option>General Surgery — Baqaqsanii Yaaluu</option>
@@ -69,7 +69,7 @@ export default function ContactForm() {
         </select>
       </div>
       <div>
-        <label className="block text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Message</label>
+        <label className="block text-sm font-black text-slate-500 uppercase tracking-widest mb-2">Message</label>
         <textarea name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Describe your condition or inquiry..." className={`${inputCls} resize-none`} />
       </div>
       <button

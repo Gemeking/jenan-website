@@ -128,11 +128,11 @@ export default function HeroSection() {
 
             <div className="absolute top-12 right-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float">
               <p className="text-2xl font-black text-white">1M+</p>
-              <p className="text-xs text-white/60 mt-0.5">Patients Served</p>
+              <p className="text-sm text-white/60 mt-0.5">Patients Served</p>
             </div>
             <div className="absolute bottom-16 left-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float-slow">
               <p className="text-2xl font-black text-white">10+</p>
-              <p className="text-xs text-white/60 mt-0.5">Years of Service</p>
+              <p className="text-sm text-white/60 mt-0.5">Years of Service</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function HeroSection() {
               aria-label={s.label}
             />
           ))}
-          <span className="ml-1 text-white/35 text-xs hidden sm:inline">{slides[current].label}</span>
+          <span className="ml-1 text-white/35 text-sm hidden sm:inline">{slides[current].label}</span>
         </div>
       </div>
 

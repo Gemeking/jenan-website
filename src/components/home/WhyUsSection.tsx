@@ -38,11 +38,11 @@ export default function WhyUsSection() {
                   </div>
                   <div>
                     <p className="text-slate-900 font-black text-sm">Surgical Safety First</p>
-                    <p className="text-slate-500 text-xs">WHO Surgical Safety Checklist · Every Procedure</p>
+                    <p className="text-slate-500 text-sm">WHO Surgical Safety Checklist · Every Procedure</p>
                   </div>
                   <div className="ml-auto text-right">
                     <p className="text-brand-red font-black text-lg">95%</p>
-                    <p className="text-slate-400 text-xs">Satisfaction</p>
+                    <p className="text-slate-400 text-sm">Satisfaction</p>
                   </div>
                 </div>
               </div>
@@ -70,9 +70,9 @@ export default function WhyUsSection() {
                       <Icon size={16} className="text-brand-red" />
                     </div>
                     <div>
-                      <p className="text-brand-red text-[10px] font-bold italic mb-0.5">{oromo}</p>
+                      <p className="text-brand-red text-xs font-bold italic mb-0.5">{oromo}</p>
                       <p className="text-slate-900 text-sm font-black mb-0.5">{title}</p>
-                      <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
+                      <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
                     </div>
                   </div>
                 </RevealOnScroll>

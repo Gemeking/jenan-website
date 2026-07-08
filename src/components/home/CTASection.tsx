@@ -15,7 +15,7 @@ export default function CTASection() {
           <p className="text-red-200 text-base font-black italic mb-2">
             &ldquo;Fayyaan Qabeenya — Dhukkuba kee otoo hin tursiifatin yaalami.&rdquo;
           </p>
-          <p className="text-white/50 text-xs tracking-[0.18em] uppercase mb-8">
+          <p className="text-white/50 text-sm tracking-[0.18em] uppercase mb-8">
             Health is Wealth — Do not delay your treatment
           </p>
 
@@ -45,12 +45,12 @@ export default function CTASection() {
               className="flex items-center gap-2 px-8 py-4 border-2 border-white/50 hover:border-white text-white font-black text-sm rounded-xl transition-all duration-200 w-full sm:w-auto justify-center"
             >
               <Phone size={17} />
-              Bilbili — 0911 72 80 00
+              Bilbili — +251 911 72 80 00
             </a>
           </div>
 
           {/* Oromo availability strip */}
-          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-1 text-white/40 text-xs">
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-1 text-white/40 text-sm">
             <span>Banaa Sa&apos;aa 24 · Open 24 Hours</span>
             <span>·</span>
             <span>Guyyaa 7 Torbanitti · 7 Days a Week</span>

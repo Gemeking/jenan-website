@@ -37,7 +37,7 @@ const images: GalleryImage[] = [
   { src: "/images/imageDoc/laboratory-chemistry-analyzer.jpg", title: "Clinical Chemistry Analyzer", oromo: "Meeshaa Qorannoo Dhiigaa", category: "Diagnostics" },
   { src: "/images/imageDoc/lab-technician-microscope.jpg", title: "Laboratory Technician at Work", oromo: "Ogeessa Kutaa Qorannoo", category: "Diagnostics" },
 
-  { src: "/images/imageDoc/clinic-staff-group.png", title: "Our Multidisciplinary Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
+  { src: "/images/imageDoc/clinic-staff-group.jpg", title: "Our Multidisciplinary Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
   { src: "/images/imageDoc/dr-dejene-portrait.jpg", title: "Dr. Dejene Desalegn — Founder & Owner", oromo: "Hundeessaa fi Ogeessa Olaanaa", category: "Team" },
   { src: "/images/imageDoc/dr-tadese-portrait.jpg", title: "Dr. Tadesse Soresso — Pediatrician", oromo: "Ogeessa Fayyaa Daa'immanii", category: "Team" },
 ];
@@ -116,7 +116,7 @@ export default function GalleryGrid() {
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-[11px] sm:text-xs font-black leading-tight line-clamp-2">{img.title}</p>
+              <p className="text-white text-sm sm:text-sm font-black leading-tight line-clamp-2">{img.title}</p>
             </div>
           </button>
         ))}
@@ -171,8 +171,8 @@ export default function GalleryGrid() {
 
           <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-center px-4 max-w-lg">
             <p className="text-white font-black text-sm sm:text-base">{filtered[lightboxIndex].title}</p>
-            <p className="text-brand-red-mid text-xs italic mt-0.5">{filtered[lightboxIndex].oromo}</p>
-            <p className="text-slate-500 text-xs mt-2">{lightboxIndex + 1} / {filtered.length}</p>
+            <p className="text-brand-red-mid text-sm italic mt-0.5">{filtered[lightboxIndex].oromo}</p>
+            <p className="text-slate-500 text-sm mt-2">{lightboxIndex + 1} / {filtered.length}</p>
           </div>
         </div>
       )}

@@ -50,7 +50,7 @@ export default function Navbar() {
               </div>
               <div className="leading-tight">
                 <p className={`text-sm font-black tracking-wider ${lightBar ? "text-slate-900" : "text-white"}`}>JENAN</p>
-                <p className="text-[10px] text-brand-red font-bold tracking-[0.18em] uppercase">Surgical Center</p>
+                <p className="text-xs text-brand-red font-bold tracking-[0.18em] uppercase">Surgical Center</p>
               </div>
             </Link>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
               <a href="tel:+251911728000"
                 className={`flex items-center gap-2 text-sm font-medium transition-colors ${lightBar ? "text-slate-600 hover:text-brand-red" : "text-white/80 hover:text-white"}`}>
                 <Phone size={14} className="text-brand-red" />
-                0911 72 80 00
+                +251 911 72 80 00
               </a>
               <Link href="/contact"
                 className="px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white text-sm font-bold rounded-lg transition-all duration-200 shadow-sm hover:shadow-md">
@@ -138,7 +138,7 @@ export default function Navbar() {
               >
                 <div>
                   <p className="text-base font-black tracking-wide">{l.label}</p>
-                  <p className={`text-xs mt-0.5 ${pathname === l.href ? "text-red-200" : "text-slate-500"}`}>{l.sub}</p>
+                  <p className={`text-sm mt-0.5 ${pathname === l.href ? "text-red-200" : "text-slate-500"}`}>{l.sub}</p>
                 </div>
                 <ArrowRight
                   size={18}
@@ -159,8 +159,8 @@ export default function Navbar() {
                 <Phone size={16} className="text-brand-red" />
               </div>
               <div>
-                <p className="text-xs text-slate-400 font-medium">Emergency / Bilbila Hatattamaa</p>
-                <p className="text-base font-black text-white">0911 72 80 00</p>
+                <p className="text-sm text-slate-400 font-medium">Emergency / Bilbila Hatattamaa</p>
+                <p className="text-base font-black text-white">+251 911 72 80 00</p>
               </div>
             </a>
 
@@ -169,7 +169,7 @@ export default function Navbar() {
               <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0">
                 <Phone size={15} className="text-slate-400" />
               </div>
-              <p className="text-sm font-semibold text-slate-300">09 28 81 81 00</p>
+              <p className="text-sm font-semibold text-slate-300">+251 928 81 81 00</p>
             </a>
 
             <div className="flex items-start gap-3 px-4 py-3 rounded-2xl bg-white/4 border border-white/6">
@@ -177,7 +177,7 @@ export default function Navbar() {
                 <MapPin size={15} className="text-slate-400" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Bakka — Location</p>
+                <p className="text-sm text-slate-500 font-medium">Bakka — Location</p>
                 <p className="text-sm text-slate-300 leading-snug">Shaka Mall, Ashewa Meda, Burayu</p>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Navbar() {
 
           {/* Footer strip */}
           <div className="px-5 pb-6 text-center">
-            <p className="text-slate-600 text-xs italic">Banaa Sa&apos;aa 24 · Guyyaa 7 · Open 24/7</p>
+            <p className="text-slate-600 text-sm italic">Banaa Sa&apos;aa 24 · Guyyaa 7 · Open 24/7</p>
           </div>
         </div>
       </div>

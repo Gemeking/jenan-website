@@ -41,7 +41,7 @@ export default function TeamSection() {
           <RevealOnScroll direction="left">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover aspect-[1195/896] bg-slate-100">
               <Image
-                src="/images/imageDoc/clinic-staff-group.png"
+                src="/images/imageDoc/clinic-staff-group.jpg"
                 alt="Jenan Medical Team"
                 fill
                 className="object-cover"
@@ -51,7 +51,7 @@ export default function TeamSection() {
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg">
                   <p className="text-slate-900 font-black text-sm">Multidisciplinary Team</p>
-                  <p className="text-slate-500 text-xs mt-0.5">
+                  <p className="text-slate-500 text-sm mt-0.5">
                     Surgeons · Anaesthetists · Scrub Nurses · Radiologists · Recovery Nurses
                   </p>
                 </div>
@@ -64,7 +64,7 @@ export default function TeamSection() {
             {values.map(({ label, oromo, en }, i) => (
               <RevealOnScroll key={label} direction="right" delay={i * 100}>
                 <div className="card p-6">
-                  <p className="text-brand-red text-xs font-black tracking-widest uppercase mb-2">{label}</p>
+                  <p className="text-brand-red text-sm font-black tracking-widest uppercase mb-2">{label}</p>
                   <p className="text-slate-900 text-sm font-semibold mb-1 italic">{oromo}</p>
                   <p className="text-slate-500 text-sm leading-relaxed">{en}</p>
                 </div>

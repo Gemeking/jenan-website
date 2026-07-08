@@ -2,6 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Clock, Mail, Facebook } from "lucide-react";
 
+function currentEthiopianYear() {
+  const now = new Date();
+  const gregorianYear = now.getFullYear();
+  const isAfterEthiopianNewYear =
+    now.getMonth() + 1 > 9 || (now.getMonth() + 1 === 9 && now.getDate() >= 11);
+  return isAfterEthiopianNewYear ? gregorianYear - 7 : gregorianYear - 8;
+}
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -18,7 +26,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-black text-white tracking-wider">JENAN</p>
-                <p className="text-xs text-brand-red font-bold tracking-widest uppercase">Surgical Center</p>
+                <p className="text-sm text-brand-red font-bold tracking-widest uppercase">Surgical Center</p>
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
@@ -40,7 +48,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-xs font-black text-white uppercase tracking-widest mb-5">Quick Links</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-widest mb-5">Quick Links</h3>
             <ul className="space-y-3">
               {[{ href: "/", label: "Home" }, { href: "/about", label: "About Us" }, { href: "/services", label: "Our Services" }, { href: "/gallery", label: "Gallery" }, { href: "/contact", label: "Contact" }].map((l) => (
                 <li key={l.href}>
@@ -55,7 +63,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-xs font-black text-white uppercase tracking-widest mb-5">Services</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-widest mb-5">Services</h3>
             <ul className="space-y-3">
               {["General Surgery", "Pediatric Care", "Maternal Care", "Diagnostic Imaging", "Emergency Care", "Recovery Services"].map((s) => (
                 <li key={s}>
@@ -70,7 +78,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-black text-white uppercase tracking-widest mb-5">Contact Us</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-widest mb-5">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin size={15} className="text-brand-red mt-0.5 shrink-0" />
@@ -79,15 +87,15 @@ export default function Footer() {
               <li className="flex gap-3">
                 <Phone size={15} className="text-brand-red mt-0.5 shrink-0" />
                 <div>
-                  <a href="tel:+251911728000" className="text-slate-400 hover:text-white text-sm block transition-colors">0911 72 80 00</a>
-                  <a href="tel:+251928818100" className="text-slate-400 hover:text-white text-sm block transition-colors">09 28 81 81 00</a>
+                  <a href="tel:+251911728000" className="text-slate-400 hover:text-white text-sm block transition-colors">+251 911 72 80 00</a>
+                  <a href="tel:+251928818100" className="text-slate-400 hover:text-white text-sm block transition-colors">+251 928 81 81 00</a>
                 </div>
               </li>
               <li className="flex gap-3">
                 <Clock size={15} className="text-brand-red mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white text-sm font-black">24 / 7</p>
-                  <p className="text-slate-400 text-xs">Banaa Sa&apos;aa 24 · Open every day</p>
+                  <p className="text-slate-400 text-sm">Banaa Sa&apos;aa 24 · Open every day</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -101,8 +109,8 @@ export default function Footer() {
 
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-slate-600 text-xs">© {new Date().getFullYear()} Jenan Surgical Speciality Center. All rights reserved.</p>
-          <p className="text-slate-700 text-xs italic">Isiniif Tajaajilna — We Serve You!!</p>
+          <p className="text-slate-600 text-sm">© {currentEthiopianYear()} E.C. Jenan Surgical Speciality Center. All rights reserved.</p>
+          <p className="text-slate-700 text-sm italic">Isiniif Tajaajilna — We Serve You!!</p>
         </div>
       </div>
     </footer>

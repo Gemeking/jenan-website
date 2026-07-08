@@ -13,7 +13,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    lines: ["0911 72 80 00", "09 28 81 81 00"],
+    lines: ["+251 911 72 80 00", "+251 928 81 81 00"],
     href: "tel:+251911728000",
     iconBg: "bg-brand-red-light border-red-200",
     iconColor: "text-brand-red",
@@ -84,7 +84,7 @@ export default function ContactPage() {
                     <Icon size={22} className={iconColor} />
                   </div>
                   <div>
-                    <p className="text-slate-400 text-xs font-black tracking-widest uppercase mb-2">{label}</p>
+                    <p className="text-slate-400 text-sm font-black tracking-widest uppercase mb-2">{label}</p>
                     {lines.map((line, j) =>
                       href && j === 0 ? (
                         <a key={line} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
@@ -118,7 +118,7 @@ export default function ContactPage() {
               </div>
               <a href="tel:+251911728000"
                 className="text-4xl font-black text-white hover:text-red-100 transition-colors shrink-0 relative z-10">
-                0911 72 80 00
+                +251 911 72 80 00
               </a>
             </div>
           </RevealOnScroll>
@@ -155,9 +155,9 @@ export default function ContactPage() {
                     <MapPin size={16} className="text-brand-red mt-0.5 shrink-0" />
                     <div>
                       <p className="text-slate-900 text-sm font-black">Shaka Mall, Ashewa Meda</p>
-                      <p className="text-slate-400 text-xs mt-0.5">Sheger Maka Nono Sub City</p>
-                      <p className="text-slate-400 text-xs">Burayu, Addis Ababa, Ethiopia</p>
-                      <p className="text-slate-400 text-xs mt-1">~200m East of Hills Top School</p>
+                      <p className="text-slate-400 text-sm mt-0.5">Sheger Maka Nono Sub City</p>
+                      <p className="text-slate-400 text-sm">Burayu, Addis Ababa, Ethiopia</p>
+                      <p className="text-slate-400 text-sm mt-1">~200m East of Hills Top School</p>
                     </div>
                   </div>
                   <div className="h-px bg-slate-100" />
@@ -165,15 +165,15 @@ export default function ContactPage() {
                     <Clock size={16} className="text-emerald-500 mt-0.5 shrink-0" />
                     <div>
                       <p className="text-slate-900 text-sm font-black">Always Open</p>
-                      <p className="text-slate-400 text-xs mt-0.5">24 Hours · 7 Days · Including Holidays</p>
+                      <p className="text-slate-400 text-sm mt-0.5">24 Hours · 7 Days · Including Holidays</p>
                     </div>
                   </div>
                   <div className="h-px bg-slate-100" />
                   <div className="flex gap-3">
                     <Phone size={16} className="text-brand-red mt-0.5 shrink-0" />
                     <div>
-                      <a href="tel:+251911728000" className="text-brand-red font-black text-sm hover:underline">0911 72 80 00</a>
-                      <a href="tel:+251928818100" className="block text-brand-red font-black text-sm hover:underline">09 28 81 81 00</a>
+                      <a href="tel:+251911728000" className="text-brand-red font-black text-sm hover:underline">+251 911 72 80 00</a>
+                      <a href="tel:+251928818100" className="block text-brand-red font-black text-sm hover:underline">+251 928 81 81 00</a>
                     </div>
                   </div>
                 </div>

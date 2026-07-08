@@ -47,7 +47,7 @@ export default function HealthAwareness() {
           {messages.map(({ oromo, english, source }, i) => (
             <RevealOnScroll key={i} direction={i % 2 === 0 ? "left" : "right"} delay={i * 60}>
               <div className="relative bg-white border border-slate-200 rounded-2xl p-7 hover:shadow-[0_8px_36px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <p className="text-slate-400 text-xs font-black tracking-widest uppercase mb-3">{source}</p>
+                <p className="text-slate-400 text-sm font-black tracking-widest uppercase mb-3">{source}</p>
 
                 <blockquote className="text-slate-900 text-base font-semibold leading-relaxed mb-3 italic">
                   &ldquo;{oromo}&rdquo;
@@ -70,7 +70,7 @@ export default function HealthAwareness() {
               href="tel:+251911728000"
               className="shrink-0 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-black text-sm rounded-xl transition-colors"
             >
-              0911 72 80 00
+              +251 911 72 80 00
             </a>
           </div>
         </RevealOnScroll>

@@ -23,7 +23,7 @@ const coreValues = [
   { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/imageDoc/inpatient-ward-bed.jpg" },
   { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/imageDoc/sterilization-autoclave.jpg" },
   { label: "Skill", oromo: "Qulqullina", desc: "Careful, consistent standards in every procedure we perform.", image: "/images/imageDoc/operating-room-3.jpg" },
-  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/imageDoc/clinic-staff-group.png" },
+  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/imageDoc/clinic-staff-group.jpg" },
 ];
 
 export default function AboutPage() {
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-white rounded-2xl px-5 py-4 shadow-lg inline-block">
                     <p className="text-2xl font-black gradient-text-red">10+ Waggaa</p>
-                    <p className="text-slate-500 text-xs">Serving Ashewa Meda</p>
+                    <p className="text-slate-500 text-sm">Serving Ashewa Meda</p>
                   </div>
                 </div>
               </div>
@@ -73,14 +73,14 @@ export default function AboutPage() {
                 <p className="text-slate-700 italic border-l-2 border-brand-red pl-4 py-1">
                   &ldquo;Waggaa kurnan darbaniif, wiirtuun keenya xiqqaa irraa guddatee wiirtuu baqaqsanii yaaluu guutuu ta&apos;e — kutaa yaalaa lama, kutaa fayyaa argachuu, meeshaalee diagnostics ammayyaa, fi tajaajila hatattamaa sa&apos;aa 24 qabu.&rdquo;
                 </p>
-                <p className="text-xs text-slate-400 italic">For over a decade, we grew from a small clinic into a full surgical speciality center with two theatres, a recovery ward, modern diagnostic equipment, and 24-hour emergency services.</p>
+                <p className="text-sm text-slate-400 italic">For over a decade, we grew from a small clinic into a full surgical speciality center with two theatres, a recovery ward, modern diagnostic equipment, and 24-hour emergency services.</p>
                 <p>Today, Jenan is proudly located at Shaka Mall, Ashewa Meda — more accessible and more capable than ever before.</p>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {[{ n: "1M+", l: "Patients Served" }, { n: "10,000+", l: "Surgeries" }, { n: "2", l: "Operating Theatres" }, { n: "24/7", l: "Emergency" }].map(({ n, l }) => (
                   <div key={l} className="card p-4 text-center">
                     <p className="text-2xl font-black gradient-text-red">{n}</p>
-                    <p className="text-slate-500 text-xs mt-0.5">{l}</p>
+                    <p className="text-slate-500 text-sm mt-0.5">{l}</p>
                   </div>
                 ))}
               </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-brand-red rounded mb-4" />
-                  <p className="text-brand-red-mid text-xs font-black tracking-widest uppercase mb-1">Kaayyoo Keenya</p>
+                  <p className="text-brand-red-mid text-sm font-black tracking-widest uppercase mb-1">Kaayyoo Keenya</p>
                   <h3 className="text-2xl font-black text-white mb-3">Our Mission</h3>
                   <p className="text-white/70 text-sm leading-relaxed">To deliver safe, skilled surgical and medical care to every patient who comes to us, regardless of background, by combining modern equipment with compassionate, personalised attention.</p>
                 </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-blue-500 rounded mb-4" />
-                  <p className="text-blue-300 text-xs font-black tracking-widest uppercase mb-1">Hawwii Keenya</p>
+                  <p className="text-blue-300 text-sm font-black tracking-widest uppercase mb-1">Hawwii Keenya</p>
                   <h3 className="text-2xl font-black text-white mb-3">Our Vision</h3>
                   <p className="text-white/70 text-sm leading-relaxed">To be the surgical speciality center our community trusts first — known for skilled surgeons, modern equipment, and care that puts the patient first.</p>
                 </div>
@@ -138,9 +138,9 @@ export default function AboutPage() {
                   <Image src={image} alt={label} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:640px) 50vw, 25vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent" />
                   <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                    <p className="text-xs font-bold opacity-60 text-white italic mb-0.5">{oromo}</p>
+                    <p className="text-sm font-bold opacity-60 text-white italic mb-0.5">{oromo}</p>
                     <p className="text-white font-black text-base mb-1">{label}</p>
-                    <p className="text-white/60 text-xs leading-relaxed">{desc}</p>
+                    <p className="text-white/60 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               </RevealOnScroll>
@@ -161,11 +161,11 @@ export default function AboutPage() {
               {milestones.map(({ year, oromo, event }, i) => (
                 <RevealOnScroll key={i} direction="left" delay={i * 60}>
                   <div className="flex gap-6 items-start">
-                    <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-red text-white font-black text-xs flex items-center justify-center shrink-0 shadow-md">
+                    <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-red text-white font-black text-sm flex items-center justify-center shrink-0 shadow-md">
                       {year}
                     </div>
                     <div className="flex-1 card p-5 mt-2">
-                      <p className="text-brand-red text-xs font-bold italic mb-1">{oromo}</p>
+                      <p className="text-brand-red text-sm font-bold italic mb-1">{oromo}</p>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 size={15} className="text-brand-red mt-0.5 shrink-0" />
                         <p className="text-slate-700 text-sm leading-relaxed">{event}</p>
@@ -191,7 +191,7 @@ export default function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll direction="scale">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover bg-slate-900" style={{ height: 440 }}>
-              <Image src="/images/imageDoc/clinic-staff-group.png" alt="Jenan Medical Team" fill className="object-contain" sizes="100vw" />
+              <Image src="/images/imageDoc/clinic-staff-group.jpg" alt="Jenan Medical Team" fill className="object-contain" sizes="100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-center">
                 <p className="text-white font-black text-xl">Our Team in Action</p>

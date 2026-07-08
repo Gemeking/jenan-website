@@ -77,10 +77,10 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/92 via-slate-900/55 to-slate-900/15" />
 
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <p className="text-white/50 text-xs font-bold tracking-widest uppercase mb-1">{oromo}</p>
+                  <p className="text-white/50 text-sm font-bold tracking-widest uppercase mb-1">{oromo}</p>
                   <h3 className="text-white text-xl font-black mb-2">{title}</h3>
                   <p className="text-white/65 text-sm leading-relaxed line-clamp-2">{description}</p>
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-white/50 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-1.5 text-sm font-bold text-white/50 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>Learn more</span>
                     <ArrowRight size={12} />
                   </div>

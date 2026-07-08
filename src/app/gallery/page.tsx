@@ -18,7 +18,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-red-mid text-xs font-black tracking-[0.2em] uppercase mb-3">Suuraa Keenya</p>
+          <p className="text-brand-red-mid text-sm font-black tracking-[0.2em] uppercase mb-3">Suuraa Keenya</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
             Our Photo <span className="text-brand-red-mid">Gallery</span>
           </h1>

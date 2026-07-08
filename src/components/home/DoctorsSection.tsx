@@ -40,7 +40,7 @@ export default function DoctorsSection() {
 
         <RevealOnScroll className="text-center mb-14">
           <div className="red-rule mx-auto mb-5" />
-          <p className="text-brand-red text-xs font-black tracking-[0.2em] uppercase mb-2">Ogeeyyii Fayyaa Keenya</p>
+          <p className="text-brand-red text-sm font-black tracking-[0.2em] uppercase mb-2">Ogeeyyii Fayyaa Keenya</p>
           <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
             Meet Our{" "}
             <span className="gradient-text-red">Doctors</span>
@@ -71,25 +71,25 @@ export default function DoctorsSection() {
                     <div className="flex flex-col items-start gap-2 min-w-0">
                       <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm shadow-lg max-w-full">
                         <Icon size={15} className="text-brand-red shrink-0" />
-                        <span className="text-slate-900 text-xs font-black truncate">{role}</span>
+                        <span className="text-slate-900 text-sm font-black truncate">{role}</span>
                       </div>
                       {i === 0 && (
                         <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-slate-900 shadow-lg max-w-full">
                           <Star size={12} className="fill-slate-900 shrink-0" />
-                          <span className="text-[10px] font-black uppercase tracking-wide whitespace-nowrap">Well-Known Locally</span>
+                          <span className="text-xs font-black uppercase tracking-wide whitespace-nowrap">Well-Known Locally</span>
                         </div>
                       )}
                     </div>
 
                     <div className="shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-brand-red text-white shadow-lg">
                       <span className="text-lg font-black leading-none">{experience}</span>
-                      <span className="text-[8px] font-bold uppercase tracking-wide mt-0.5 opacity-90 text-center leading-tight">Years</span>
+                      <span className="text-[10px] font-bold uppercase tracking-wide mt-0.5 opacity-90 text-center leading-tight">Years</span>
                     </div>
                   </div>
 
                   {/* Name over image bottom */}
                   <div className="absolute bottom-5 left-6 right-6">
-                    <p className="text-brand-red-mid text-xs font-bold italic mb-1">{oromo}</p>
+                    <p className="text-brand-red-mid text-sm font-bold italic mb-1">{oromo}</p>
                     <h3 className="text-white text-2xl font-black leading-tight">{name}</h3>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function DoctorsSection() {
                     <Quote size={18} className="text-brand-red shrink-0 mt-0.5" />
                     <div>
                       <p className="text-slate-800 text-sm font-bold italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
-                      <p className="text-slate-400 text-xs mt-1">{quoteEn}</p>
+                      <p className="text-slate-400 text-sm mt-1">{quoteEn}</p>
                     </div>
                   </div>
 
@@ -110,7 +110,7 @@ export default function DoctorsSection() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {tags.map((tag) => (
-                      <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-red-light border border-red-100 text-brand-red text-xs font-bold">
+                      <span key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-red-light border border-red-100 text-brand-red text-sm font-bold">
                         <Star size={11} />
                         {tag}
                       </span>

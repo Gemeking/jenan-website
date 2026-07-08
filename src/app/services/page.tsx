@@ -127,7 +127,7 @@ export default function ServicesPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-50/10" />
                   </div>
                   <div className={`p-8 lg:p-10 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <p className="text-xs font-black tracking-widest uppercase mb-1 italic" style={{ color: borderColor }}>{oromo}</p>
+                    <p className="text-sm font-black tracking-widest uppercase mb-1 italic" style={{ color: borderColor }}>{oromo}</p>
                     <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">{title}</h2>
                     <p className="text-slate-500 leading-relaxed mb-6">{description}</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -151,7 +151,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center mb-12">
             <div className="red-rule mx-auto mb-5" />
-            <p className="text-brand-red text-xs font-black tracking-[0.2em] uppercase mb-2">Gosoota Opiraasiyoonii</p>
+            <p className="text-brand-red text-sm font-black tracking-[0.2em] uppercase mb-2">Gosoota Opiraasiyoonii</p>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
               Surgical Procedures{" "}
               <span className="gradient-text-red">We Perform</span>
@@ -165,12 +165,12 @@ export default function ServicesPage() {
             {[...procedures.left, ...procedures.right].map(({ n, oromo, en }, i) => (
               <RevealOnScroll key={n} direction={n <= 10 ? "left" : "right"} delay={(i % 10) * 40}>
                 <div className="flex items-start gap-4 bg-white border border-slate-100 rounded-xl px-4 py-3.5 hover:border-red-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-200">
-                  <span className="shrink-0 w-8 h-8 rounded-lg bg-brand-red-light text-brand-red font-black text-xs flex items-center justify-center">
+                  <span className="shrink-0 w-8 h-8 rounded-lg bg-brand-red-light text-brand-red font-black text-sm flex items-center justify-center">
                     {n}
                   </span>
                   <div className="min-w-0">
                     <p className="text-slate-900 text-sm font-black italic leading-snug">{oromo}</p>
-                    <p className="text-slate-500 text-xs mt-0.5">{en}</p>
+                    <p className="text-slate-500 text-sm mt-0.5">{en}</p>
                   </div>
                 </div>
               </RevealOnScroll>
@@ -191,8 +191,8 @@ export default function ServicesPage() {
               <RevealOnScroll key={name} direction="up" delay={i * 60}>
                 <div className="card p-5 text-center">
                   <div className="h-0.5 w-8 bg-slate-200 rounded mx-auto mb-3" />
-                  <p className="text-slate-700 text-xs font-black leading-tight">{name}</p>
-                  <p className="text-slate-400 text-xs italic mt-0.5">{oromo}</p>
+                  <p className="text-slate-700 text-sm font-black leading-tight">{name}</p>
+                  <p className="text-slate-400 text-sm italic mt-0.5">{oromo}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-primary inline-flex">Contact Us <ArrowRight size={17} /></Link>
               <a href="tel:+251911728000" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-slate-200 text-slate-700 hover:border-brand-red hover:text-brand-red font-bold text-sm rounded-xl transition-all">
-                Call 0911 72 80 00
+                Call +251 911 72 80 00
               </a>
             </div>
           </RevealOnScroll>

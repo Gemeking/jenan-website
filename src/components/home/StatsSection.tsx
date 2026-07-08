@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 const stats = [
-  { value: 1000000, suffix: "+", label: "Patients Served", oromo: "Dhukkubsataa Tajaajilame", bg: "bg-brand-red", text: "text-white" },
+  { value: 500000, suffix: "+", label: "Patients Served", oromo: "Dhukkubsataa Tajaajilame", bg: "bg-brand-red", text: "text-white" },
   { value: 10000, suffix: "+", label: "Successful Surgeries", oromo: "Opiraasiyoonii Milkaa'e", bg: "bg-slate-900", text: "text-white" },
   { value: 10, suffix: "+", label: "Years of Service", oromo: "Waggaa Tajaajilaaf", bg: "bg-brand-red", text: "text-white" },
   { value: 24, suffix: "/7", label: "Emergency Available", oromo: "Banaa Sa'aa 24", bg: "bg-slate-900", text: "text-white" },
@@ -49,7 +49,7 @@ export default function StatsSection() {
                 <Counter target={value} suffix={suffix} />
               </p>
               <p className="text-sm font-bold opacity-90 tracking-wide">{label}</p>
-              <p className="text-xs opacity-50 italic mt-0.5">{oromo}</p>
+              <p className="text-sm opacity-50 italic mt-0.5">{oromo}</p>
             </div>
           </RevealOnScroll>
         ))}

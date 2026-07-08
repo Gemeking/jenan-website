@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const facilities = [
   { src: "/images/imageDoc/operating-room-3-wide.jpg", title: "Operating Theatre", oromo: "Kutaa Baqaqsanii", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
-  { src: "/images/imageDoc/clinic-staff-group.png", title: "Expert Medical Team", oromo: "Garee Ogeeyyii Fayyaa", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
+  { src: "/images/imageDoc/clinic-staff-group.jpg", title: "Expert Medical Team", oromo: "Garee Ogeeyyii Fayyaa", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
   { src: "/images/imageDoc/inpatient-ward-bed.jpg", title: "Inpatient Ward", oromo: "Kutaa Fayyinaa", desc: "Kutaa booda baqaqsaniitti — post-operative recovery with close monitoring and oxygen supply.", tag: "Recovery" },
   { src: "/images/imageDoc/ultrasound-room.jpg", title: "Mindray DC-40 Ultrasound", oromo: "Meeshaa Ultrasound", desc: "Ultrasoond ammayyaa — colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
   { src: "/images/imageDoc/xray-room-machine.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", desc: "Sakatta'a X-ray — high-resolution radiography for fast and accurate skeletal and chest imaging.", tag: "Radiology" },
@@ -66,7 +66,7 @@ export default function FacilitiesSection() {
 
               {/* Tag */}
               <div className="absolute top-4 left-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-bold border ${tagStyles[facilities[active].tag]}`}>
+                <span className={`px-3 py-1 rounded-full text-sm font-bold border ${tagStyles[facilities[active].tag]}`}>
                   {facilities[active].tag}
                 </span>
               </div>
@@ -83,7 +83,7 @@ export default function FacilitiesSection() {
 
               {/* Caption */}
               <div className="absolute bottom-14 left-5 right-16">
-                <p className="text-white/50 text-xs font-bold italic mb-0.5">{facilities[active].oromo}</p>
+                <p className="text-white/50 text-sm font-bold italic mb-0.5">{facilities[active].oromo}</p>
                 <h3 className="text-white font-black text-xl">{facilities[active].title}</h3>
                 <p className="text-white/70 text-sm mt-1">{facilities[active].desc}</p>
               </div>
