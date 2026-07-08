@@ -52,7 +52,7 @@ export default function ContactPage() {
       <section className="relative pt-36 pb-24 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <Image
-            src="/images/patient-areas/indoor-reception.jpg"
+            src="/images/imageDoc/reception-counter.jpg"
             alt="Jenan Reception"
             fill
             className="object-cover opacity-40"
@@ -182,7 +182,7 @@ export default function ContactPage() {
               {/* Building photo */}
               <div className="relative rounded-2xl overflow-hidden" style={{ height: 150 }}>
                 <Image
-                  src="/images/building-exterior.jpg"
+                  src="/images/imageDoc/building-facade-signage.jpg"
                   alt="Jenan Surgical Center Building"
                   fill
                   className="object-cover"

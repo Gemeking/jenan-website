@@ -10,6 +10,7 @@ const links = [
   { href: "/", label: "Home", sub: "Mana" },
   { href: "/about", label: "About Us", sub: "Waa'ee Keenya" },
   { href: "/services", label: "Services", sub: "Tajaajila Keenya" },
+  { href: "/gallery", label: "Gallery", sub: "Suuraa Keenya" },
   { href: "/contact", label: "Contact", sub: "Nu Quunnamaa" },
 ];
 

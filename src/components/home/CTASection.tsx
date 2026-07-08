@@ -20,8 +20,8 @@ export default function CTASection() {
           </p>
 
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 leading-tight">
-            Tajaajila Premium<br />
-            <span className="text-red-200 font-light text-3xl sm:text-4xl">Premium Medical Care</span>
+            Yeroo Hunda Isiniif Jirra<br />
+            <span className="text-red-200 font-light text-3xl sm:text-4xl">Care You Can Count On</span>
           </h2>
 
           {/* Bilingual body text */}

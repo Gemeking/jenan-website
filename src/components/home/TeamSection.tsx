@@ -5,7 +5,7 @@ const values = [
   {
     label: "Kaayyoo Keenya — Mission",
     oromo: "Dhukkubsataa hundaaf, aadaa fi qabeenya irraa adda osoo hin baasiin, tajaajila fayyaa addunyaa ol'aanaa kennuuf carraaqna.",
-    en: "Delivering world-class surgical and medical care to every patient in Ethiopia, regardless of background.",
+    en: "Delivering safe, skilled surgical and medical care to every patient who walks through our doors, regardless of background.",
   },
   {
     label: "Hawwii Keenya — Vision",
@@ -15,7 +15,7 @@ const values = [
   {
     label: "Gatii Keenya — Values",
     oromo: "Qulqullina · Nageenya · Kabaja · Dhugummaa · Hojii Gamtaa — Kunniin gatii hunda tarkaanfii keenyaa kan hogganuu dha.",
-    en: "Excellence · Safety · Compassion · Integrity · Teamwork — These values guide every step we take.",
+    en: "Skill · Safety · Compassion · Integrity · Teamwork — These values guide every step we take.",
   },
 ];
 
@@ -39,9 +39,9 @@ export default function TeamSection() {
 
           {/* Team photo */}
           <RevealOnScroll direction="left">
-            <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 440 }}>
+            <div className="relative rounded-3xl overflow-hidden shadow-card-hover aspect-[1195/896] bg-slate-100">
               <Image
-                src="/images/team/medical-team.jpg"
+                src="/images/imageDoc/clinic-staff-group.png"
                 alt="Jenan Medical Team"
                 fill
                 className="object-cover"

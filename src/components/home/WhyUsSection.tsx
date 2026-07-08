@@ -3,7 +3,7 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { CheckCircle2, ShieldCheck, FlaskConical, HeartHandshake, Clock4, CheckCircle } from "lucide-react";
 
 const reasons = [
-  { icon: ShieldCheck, title: "Certified Surgical Excellence", oromo: "Qulqullina Baqaqsaanii Mirkanaa'e", desc: "WHO surgical safety checklists and international protocols observed in every procedure." },
+  { icon: ShieldCheck, title: "WHO Surgical Safety Checklist", oromo: "Qulqullina Baqaqsaanii Mirkanaa'e", desc: "WHO surgical safety checklists and international protocols observed in every procedure." },
   { icon: FlaskConical, title: "Advanced Diagnostics", oromo: "Sakatta'a Ammayyaa", desc: "In-house X-ray, ultrasound, and radiology workstation for fast, accurate results on-site." },
   { icon: HeartHandshake, title: "Compassionate Patient Care", oromo: "Dhukkubsataa Jaalalaan Yaaluu", desc: "Kabajaa fi xiyyeeffannoo dhuunfaa — dignity and personalised attention from admission to discharge." },
   { icon: Clock4, title: "24 / 7 Emergency Response", oromo: "Sa'aa 24 Hatattamaa Deebisuu", desc: "Yeroo hatattamaa nu bira jirtu — our emergency team is always on standby, day and night." },
@@ -21,7 +21,7 @@ export default function WhyUsSection() {
           <RevealOnScroll direction="left">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 520 }}>
               <Image
-                src="/images/facilities/operating-room-1-wide.jpg"
+                src="/images/imageDoc/operating-room-3-wide.jpg"
                 alt="Operating Room"
                 fill
                 className="object-cover"
@@ -54,7 +54,7 @@ export default function WhyUsSection() {
             <RevealOnScroll direction="right">
               <div className="red-rule mb-5" />
               <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4 leading-tight">
-                Excellence You Can{" "}
+                Care You Can{" "}
                 <span className="gradient-text-red">Trust</span>
               </h2>
               <p className="text-slate-500 text-lg mb-10 leading-relaxed">

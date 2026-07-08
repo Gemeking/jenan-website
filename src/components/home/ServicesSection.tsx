@@ -9,38 +9,38 @@ const services = [
   {
     title: "General Surgery",
     oromo: "Baqaqsanii Yaaluu",
-    description: "Advanced surgical procedures by expert surgeons using state-of-the-art equipment and internationally-recognised techniques.",
-    image: "/images/facilities/operating-room-1.jpg",
+    description: "Surgical procedures performed by experienced surgeons using modern equipment and internationally-recognised techniques.",
+    image: "/images/imageDoc/operating-room-3.jpg",
   },
   {
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
     description: "Specialised medical and surgical care designed for infants, children, and adolescents with compassion and clinical precision.",
-    image: "/images/facilities/operating-room-2-entrance.jpg",
+    image: "/images/imageDoc/injection-room.jpg",
   },
   {
     title: "Maternal Care",
     oromo: "Haadha Yaaluu",
-    description: "Comprehensive obstetric and gynaecological care ensuring the safety and wellbeing of mothers and newborns throughout the journey.",
-    image: "/images/facilities/recovery-room.jpg",
+    description: "Obstetric and gynaecological care ensuring the safety and wellbeing of mothers and newborns throughout the journey.",
+    image: "/images/imageDoc/inpatient-ward-bed.jpg",
   },
   {
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
     description: "In-house X-ray, Mindray DC-40 colour Doppler ultrasound, and digital radiology workstation for fast, accurate diagnosis.",
-    image: "/images/equipment/ultrasound-machine.jpg",
+    image: "/images/imageDoc/ultrasound-room.jpg",
   },
   {
     title: "Emergency Care",
     oromo: "Hatattamaa Yaaluu",
     description: "Our emergency team is on standby around the clock — day or night — ready to respond to any medical or surgical crisis.",
-    image: "/images/patient-areas/indoor-reception.jpg",
+    image: "/images/imageDoc/emergency-room-entrance.jpg",
   },
   {
     title: "Sterilization & Safety",
     oromo: "Qulqullina Eeggannoo",
     description: "Hospital-grade autoclave sterilization and strict WHO infection-control protocols guarantee the highest safety standards.",
-    image: "/images/facilities/sterilization-room.jpg",
+    image: "/images/imageDoc/sterilization-autoclave.jpg",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function ServicesSection() {
         <RevealOnScroll className="text-center mb-14">
           <div className="red-rule mx-auto mb-5" />
           <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
-            Comprehensive{" "}
+            Our{" "}
             <span className="gradient-text-red">Medical Services</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">

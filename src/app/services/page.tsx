@@ -14,7 +14,7 @@ const mainServices = [
     title: "General Surgery",
     oromo: "Baqaqsanii Yaaluu",
     borderColor: "#DC2626",
-    image: "/images/facilities/operating-room-1-wide.jpg",
+    image: "/images/imageDoc/operating-room-3.jpg",
     description: "Our experienced surgical team performs a comprehensive range of general surgical procedures using the latest minimally invasive and open surgical techniques.",
     features: ["Appendectomy & hernia repair", "Cholecystectomy (gallbladder removal)", "Abdominal surgeries", "Wound debridement & closure", "Laparoscopic procedures", "Soft tissue tumour excision"],
   },
@@ -22,7 +22,7 @@ const mainServices = [
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
     borderColor: "#2563EB",
-    image: "/images/facilities/operating-room-2-entrance.jpg",
+    image: "/images/imageDoc/injection-room.jpg",
     description: "Specialised medical and surgical care tailored to the unique needs of infants, children, and adolescents, delivered with extra sensitivity and expertise.",
     features: ["Paediatric general surgery", "Neonatal care support", "Paediatric medical consultations", "Minor paediatric procedures", "Child-friendly recovery environment", "Family-centred care approach"],
   },
@@ -30,15 +30,15 @@ const mainServices = [
     title: "Maternal & Obstetric Care",
     oromo: "Haadha fi Daa'ima Yaaluu",
     borderColor: "#E11D48",
-    image: "/images/facilities/recovery-room.jpg",
-    description: "Comprehensive care for mothers throughout pregnancy, childbirth, and the postnatal period with a focus on the safety of both mother and child.",
+    image: "/images/imageDoc/inpatient-ward-bed.jpg",
+    description: "Care for mothers throughout pregnancy, childbirth, and the postnatal period with a focus on the safety of both mother and child.",
     features: ["Caesarean section (C-section)", "Normal delivery support", "Gynaecological surgeries", "Ectopic pregnancy management", "Postnatal recovery care", "Family planning consultations"],
   },
   {
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
     borderColor: "#7C3AED",
-    image: "/images/equipment/ultrasound-machine.jpg",
+    image: "/images/imageDoc/ultrasound-room.jpg",
     description: "Advanced in-house imaging capabilities enabling rapid, accurate diagnosis to guide treatment decisions and surgical planning.",
     features: ["Mindray DC-40 colour Doppler ultrasound", "Abdominal & pelvic sonography", "Obstetric ultrasound", "Full digital X-ray suite", "Chest & skeletal radiography", "Digital radiology workstation"],
   },
@@ -46,7 +46,7 @@ const mainServices = [
     title: "24/7 Emergency Services",
     oromo: "Tajaajila Hatattamaa Sa'aa 24",
     borderColor: "#D97706",
-    image: "/images/patient-areas/indoor-reception.jpg",
+    image: "/images/imageDoc/emergency-room-entrance.jpg",
     description: "Our dedicated emergency team is always on standby to triage and treat medical and surgical emergencies promptly, any hour of the day or night.",
     features: ["Immediate triage & stabilization", "Emergency surgical procedures", "Trauma management", "Resuscitation services", "24-hour staffed reception", "Rapid diagnostic access"],
   },
@@ -54,11 +54,38 @@ const mainServices = [
     title: "Sterilization & Safety",
     oromo: "Qulqullina fi Nageenya",
     borderColor: "#059669",
-    image: "/images/facilities/sterilization-room.jpg",
+    image: "/images/imageDoc/sterilization-autoclave.jpg",
     description: "Our rigorous sterilization department ensures every instrument used in procedures meets the highest international infection-control standards.",
     features: ["Large-capacity autoclave sterilization", "WHO infection control protocols", "Single-use instrument policies", "Sterile environment maintenance", "Surgical safety checklist compliance", "Regular equipment certification"],
   },
 ];
+
+const procedures = {
+  left: [
+    { n: 1, oromo: "Quufa mormaa", en: "Thyroidectomy" },
+    { n: 2, oromo: "Toonsilii", en: "Tonsillectomy" },
+    { n: 3, oromo: "Hucuba mormaratti bahu", en: "Neck dissection" },
+    { n: 4, oromo: "Opiraasiyoonii garaa keessaa", en: "Abdominal surgeries" },
+    { n: 5, oromo: "Hadhooftuu", en: "Cholecystectomy" },
+    { n: 6, oromo: "Kaansarii garaa keessaa", en: "Intra-abdominal cancer surgery" },
+    { n: 7, oromo: "Guduunfamuu marrummaanii", en: "Intestinal obstruction" },
+    { n: 8, oromo: "Appendix baasuu", en: "Appendectomy" },
+    { n: 9, oromo: "Rakkaa garaa keessaa garagaraa", en: "Exploratory laparotomy" },
+    { n: 10, oromo: "Opiraasiyoonii gadaamessaa", en: "Gynaecological & obstetric surgery" },
+  ],
+  right: [
+    { n: 11, oromo: "Opiraasiyoonii Balaa tasaa", en: "Trauma-related operations" },
+    { n: 12, oromo: "Rakkoo fincaan dhoowwuu", en: "Prostatectomy, BOO, stricture repair" },
+    { n: 13, oromo: "Opiraasiyoonii dhiitoo harmaa", en: "Breast lump surgery" },
+    { n: 14, oromo: "Opiraasiyoonii kaansarii harmaa", en: "Breast cancer surgery" },
+    { n: 15, oromo: "Opiraasiyoonii bu'aa garaa", en: "Hernia repair" },
+    { n: 16, oromo: "Opiraasiyoonii dhiitoo qaamaa", en: "Soft tissue mass removal" },
+    { n: 17, oromo: "Opiraasiyoonii caba lafee", en: "Orthopedic surgery (ORIF, immobilization)" },
+    { n: 18, oromo: "Opiraasiyoonii lafee ilkaanii", en: "Mandibular fixation" },
+    { n: 19, oromo: "Tarsaa'a qaamaa fi hiddaa", en: "Soft tissue & tendon repair" },
+    { n: 20, oromo: "Opiraasiyoonii kamiifuu mariisisaa", en: "Consultation for any kind of operation" },
+  ],
+};
 
 const additionalServices = [
   { name: "Post-Operative Monitoring", oromo: "Itti aanee hordofuu" },
@@ -75,12 +102,12 @@ export default function ServicesPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Operating Theatre" fill className="object-cover opacity-40" />
+          <Image src="/images/imageDoc/operating-room-3-wide.jpg" alt="Operating Theatre" fill className="object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
-            Comprehensive<br /><span className="text-brand-red-mid">Medical Excellence</span>
+            Our Medical<br /><span className="text-brand-red-mid">Services</span>
           </h1>
           <p className="text-slate-300 text-xl max-w-2xl leading-relaxed">
             From advanced surgical procedures to precise diagnostics and 24/7 emergency care, Jenan offers a complete spectrum of medical services under one roof.
@@ -119,8 +146,41 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Additional services ── */}
+      {/* ── Surgical procedures list ── */}
       <section className="py-20 section-alt">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealOnScroll className="text-center mb-12">
+            <div className="red-rule mx-auto mb-5" />
+            <p className="text-brand-red text-xs font-black tracking-[0.2em] uppercase mb-2">Gosoota Opiraasiyoonii</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+              Surgical Procedures{" "}
+              <span className="gradient-text-red">We Perform</span>
+            </h2>
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              Gosoota opiraasiyoonii Wiirtuu Baqaqsanii Yaaluu Jennaanitti kennaman — the full range of operations performed at our surgical center.
+            </p>
+          </RevealOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+            {[...procedures.left, ...procedures.right].map(({ n, oromo, en }, i) => (
+              <RevealOnScroll key={n} direction={n <= 10 ? "left" : "right"} delay={(i % 10) * 40}>
+                <div className="flex items-start gap-4 bg-white border border-slate-100 rounded-xl px-4 py-3.5 hover:border-red-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-200">
+                  <span className="shrink-0 w-8 h-8 rounded-lg bg-brand-red-light text-brand-red font-black text-xs flex items-center justify-center">
+                    {n}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-slate-900 text-sm font-black italic leading-snug">{oromo}</p>
+                    <p className="text-slate-500 text-xs mt-0.5">{en}</p>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Additional services ── */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center mb-12">
             <h2 className="text-3xl font-black text-slate-900 mb-3">Additional <span className="gradient-text-red">Services</span></h2>

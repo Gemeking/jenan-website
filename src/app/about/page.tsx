@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import DoctorsSection from "@/components/home/DoctorsSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,10 +20,10 @@ const milestones = [
 ];
 
 const coreValues = [
-  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/facilities/recovery-room.jpg" },
-  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/facilities/sterilization-room.jpg" },
-  { label: "Excellence", oromo: "Qulqullina", desc: "World-class standards in every procedure performed.", image: "/images/facilities/operating-room-1.jpg" },
-  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/team/medical-team.jpg" },
+  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/imageDoc/inpatient-ward-bed.jpg" },
+  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/imageDoc/sterilization-autoclave.jpg" },
+  { label: "Skill", oromo: "Qulqullina", desc: "Careful, consistent standards in every procedure we perform.", image: "/images/imageDoc/operating-room-3.jpg" },
+  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/imageDoc/clinic-staff-group.png" },
 ];
 
 export default function AboutPage() {
@@ -31,16 +32,16 @@ export default function AboutPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/building-exterior.jpg" alt="Jenan Surgical Center Building" fill className="object-cover opacity-45" />
+          <Image src="/images/imageDoc/building-facade-signage.jpg" alt="Jenan Surgical Center Building" fill className="object-cover opacity-45" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
-            Ethiopia&apos;s Premier<br />
-            <span className="text-brand-red-mid">Surgical Center</span>
+            Serving Ashewa Meda<br />
+            <span className="text-brand-red-mid">Since 2014</span>
           </h1>
           <p className="text-slate-300 text-xl leading-relaxed max-w-2xl">
-            Jenan Surgical Speciality Center was founded with a singular commitment — to bring world-class surgical excellence to the heart of Ethiopia.
+            Jenan Surgical Speciality Center was founded to bring skilled, dependable surgical care to Ashewa Meda and the wider Burayu community.
           </p>
         </div>
       </section>
@@ -51,12 +52,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <RevealOnScroll direction="left">
               <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 480 }}>
-                <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Operating Room" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/operating-room-3-wide.jpg" alt="Operating Room" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-white rounded-2xl px-5 py-4 shadow-lg inline-block">
                     <p className="text-2xl font-black gradient-text-red">10+ Waggaa</p>
-                    <p className="text-slate-500 text-xs">of Surgical Excellence</p>
+                    <p className="text-slate-500 text-xs">Serving Ashewa Meda</p>
                   </div>
                 </div>
               </div>
@@ -65,7 +66,7 @@ export default function AboutPage() {
             <RevealOnScroll direction="right">
               <div className="red-rule mb-5" />
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-6">
-                A Decade of <span className="gradient-text-red">Excellence</span>
+                Our Story{" "}<span className="gradient-text-red">So Far</span>
               </h2>
               <div className="space-y-4 text-slate-500 text-base leading-relaxed">
                 <p>Founded in Burayu, Addis Ababa, Jenan Medical Center began as a vision: to create a place where every Ethiopian could access the same level of surgical care found in the world&apos;s best hospitals.</p>
@@ -76,7 +77,7 @@ export default function AboutPage() {
                 <p>Today, Jenan is proudly located at Shaka Mall, Ashewa Meda — more accessible and more capable than ever before.</p>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-8">
-                {[{ n: "5,000+", l: "Patients Treated" }, { n: "1,200+", l: "Surgeries" }, { n: "2", l: "Operating Theatres" }, { n: "24/7", l: "Emergency" }].map(({ n, l }) => (
+                {[{ n: "1M+", l: "Patients Served" }, { n: "10,000+", l: "Surgeries" }, { n: "2", l: "Operating Theatres" }, { n: "24/7", l: "Emergency" }].map(({ n, l }) => (
                   <div key={l} className="card p-4 text-center">
                     <p className="text-2xl font-black gradient-text-red">{n}</p>
                     <p className="text-slate-500 text-xs mt-0.5">{l}</p>
@@ -97,25 +98,25 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <RevealOnScroll direction="left">
               <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
-                <Image src="/images/facilities/operating-room-1-wide.jpg" alt="Our Mission" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/operating-room-3.jpg" alt="Our Mission" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-brand-red rounded mb-4" />
                   <p className="text-brand-red-mid text-xs font-black tracking-widest uppercase mb-1">Kaayyoo Keenya</p>
                   <h3 className="text-2xl font-black text-white mb-3">Our Mission</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">To deliver world-class surgical and medical care to every patient in Ethiopia, regardless of background, by combining advanced technology with compassionate, personalised attention.</p>
+                  <p className="text-white/70 text-sm leading-relaxed">To deliver safe, skilled surgical and medical care to every patient who comes to us, regardless of background, by combining modern equipment with compassionate, personalised attention.</p>
                 </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll direction="right">
               <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
-                <Image src="/images/building-exterior.jpg" alt="Our Vision" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/entrance-gate-signage.jpg" alt="Our Vision" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-blue-500 rounded mb-4" />
                   <p className="text-blue-300 text-xs font-black tracking-widest uppercase mb-1">Hawwii Keenya</p>
                   <h3 className="text-2xl font-black text-white mb-3">Our Vision</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">To be the most trusted, technologically advanced, and patient-centred surgical speciality center in East Africa — a beacon of medical excellence that sets the standard for the continent.</p>
+                  <p className="text-white/70 text-sm leading-relaxed">To be the surgical speciality center our community trusts first — known for skilled surgeons, modern equipment, and care that puts the patient first.</p>
                 </div>
               </div>
             </RevealOnScroll>
@@ -178,16 +179,19 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Doctors ── */}
+      <DoctorsSection />
+
       {/* ── Team photo ── */}
-      <section className="py-20 section-white">
+      <section className="py-20 section-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll className="text-center mb-12">
             <h2 className="text-4xl font-black text-slate-900 mb-3">Our <span className="gradient-text-red">Team</span></h2>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">Experienced professionals united by a passion for patient care.</p>
           </RevealOnScroll>
           <RevealOnScroll direction="scale">
-            <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 440 }}>
-              <Image src="/images/team/medical-team.jpg" alt="Jenan Medical Team" fill className="object-cover" sizes="100vw" />
+            <div className="relative rounded-3xl overflow-hidden shadow-card-hover bg-slate-900" style={{ height: 440 }}>
+              <Image src="/images/imageDoc/clinic-staff-group.png" alt="Jenan Medical Team" fill className="object-contain" sizes="100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-center">
                 <p className="text-white font-black text-xl">Our Team in Action</p>

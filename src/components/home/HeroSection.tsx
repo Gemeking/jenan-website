@@ -7,11 +7,11 @@ import { ArrowRight, Phone, Shield, Clock, ChevronDown } from "lucide-react";
 import MedicalCross3D from "@/components/ui/MedicalCross3D";
 
 const slides = [
-  { src: "/images/building-exterior.jpg", label: "Jenan Surgical Center" },
-  { src: "/images/facilities/operating-room-1-wide.jpg", label: "Advanced Operating Theatres" },
-  { src: "/images/patient-areas/indoor-reception.jpg", label: "24-Hour Emergency Care" },
-  { src: "/images/facilities/hospital-corridor.jpg", label: "Modern Facilities" },
-  { src: "/images/equipment/ultrasound-machine.jpg", label: "Precision Diagnostics" },
+  { src: "/images/imageDoc/entrance-gate-signage.jpg", label: "Jenan Surgical Center" },
+  { src: "/images/imageDoc/operating-room-3-wide.jpg", label: "Advanced Operating Theatres" },
+  { src: "/images/imageDoc/reception-counter.jpg", label: "24-Hour Emergency Care" },
+  { src: "/images/imageDoc/surgical-waiting-hallway.jpg", label: "Modern Facilities" },
+  { src: "/images/imageDoc/ultrasound-room.jpg", label: "Precision Diagnostics" },
 ];
 
 export default function HeroSection() {
@@ -85,7 +85,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="hero-sub-shadow text-white/85 text-base sm:text-lg leading-relaxed max-w-lg">
-              Ethiopia&apos;s premier surgical speciality center. Advanced procedures, compassionate care, and world-class facilities — every hour of every day.
+              A surgical speciality center in Burayu, Ethiopia. Skilled surgeons, honest care, and modern equipment — every hour of every day.
             </p>
 
             {/* Oromo awareness line */}
@@ -110,7 +110,7 @@ export default function HeroSection() {
             {/* Trust strip */}
             <div className="flex flex-wrap gap-4 sm:gap-5 pt-1">
               {[
-                { icon: Shield, text: "Certified Excellence" },
+                { icon: Shield, text: "WHO Safety Standards" },
                 { icon: Clock, text: "24 / 7 Emergency" },
               ].map(({ icon: Icon, text }) => (
                 <span key={text} className="flex items-center gap-2 text-sm text-white/70 hero-sub-shadow">
@@ -127,12 +127,12 @@ export default function HeroSection() {
             <MedicalCross3D className="w-full h-full" />
 
             <div className="absolute top-12 right-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float">
-              <p className="text-2xl font-black text-white">5,000+</p>
-              <p className="text-xs text-white/60 mt-0.5">Patients Treated</p>
+              <p className="text-2xl font-black text-white">1M+</p>
+              <p className="text-xs text-white/60 mt-0.5">Patients Served</p>
             </div>
             <div className="absolute bottom-16 left-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-4 animate-float-slow">
               <p className="text-2xl font-black text-white">10+</p>
-              <p className="text-xs text-white/60 mt-0.5">Years of Excellence</p>
+              <p className="text-xs text-white/60 mt-0.5">Years of Service</p>
             </div>
           </div>
         </div>

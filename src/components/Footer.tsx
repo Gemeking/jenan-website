@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
-              Wiirtuu Baqaqsanii Yaaluu Jennaan — Ethiopia&apos;s premier surgical speciality center delivering world-class care.
+              Wiirtuu Baqaqsanii Yaaluu Jennaan — trusted by families across Ashewa Meda and Burayu for surgical, diagnostic, and emergency care.
             </p>
             <div className="flex gap-3">
               {[
@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-black text-white uppercase tracking-widest mb-5">Quick Links</h3>
             <ul className="space-y-3">
-              {[{ href: "/", label: "Home" }, { href: "/about", label: "About Us" }, { href: "/services", label: "Our Services" }, { href: "/contact", label: "Contact" }].map((l) => (
+              {[{ href: "/", label: "Home" }, { href: "/about", label: "About Us" }, { href: "/services", label: "Our Services" }, { href: "/gallery", label: "Gallery" }, { href: "/contact", label: "Contact" }].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-slate-400 hover:text-brand-red text-sm transition-colors flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-brand-red opacity-0 group-hover:opacity-100 transition-opacity" />

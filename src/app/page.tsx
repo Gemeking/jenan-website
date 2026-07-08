@@ -1,6 +1,7 @@
 import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
 import ServicesSection from "@/components/home/ServicesSection";
+import DoctorsSection from "@/components/home/DoctorsSection";
 import WhyUsSection from "@/components/home/WhyUsSection";
 import FacilitiesSection from "@/components/home/FacilitiesSection";
 import HealthAwareness from "@/components/home/HealthAwareness";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <ServicesSection />
+      <DoctorsSection />
       <WhyUsSection />
       <FacilitiesSection />
       <HealthAwareness />
