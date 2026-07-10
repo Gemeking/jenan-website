@@ -7,11 +7,10 @@ import { ArrowRight, Phone, Shield, Clock, ChevronDown } from "lucide-react";
 import MedicalCross3D from "@/components/ui/MedicalCross3D";
 
 const slides = [
-  { src: "/images/imageDoc/entrance-gate-signage.jpg", label: "Jenan Surgical Center" },
+  { src: "/images/hero/building-signage.jpg", label: "Jenan Surgical Center" },
+  { src: "/images/hero/entrance-arch-street.jpg", label: "Our Entrance in Ashewa Meda" },
   { src: "/images/imageDoc/operating-room-3-wide.jpg", label: "Advanced Operating Theatres" },
-  { src: "/images/imageDoc/reception-counter.jpg", label: "24-Hour Emergency Care" },
-  { src: "/images/imageDoc/surgical-waiting-hallway.jpg", label: "Modern Facilities" },
-  { src: "/images/imageDoc/ultrasound-room.jpg", label: "Precision Diagnostics" },
+  { src: "/images/imageDoc/clinic-staff-group.jpg", label: "Our Expert Medical Team" },
 ];
 
 export default function HeroSection() {
