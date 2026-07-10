@@ -38,7 +38,7 @@ const images: GalleryImage[] = [
   { src: "/images/imageDoc/lab-technician-microscope.jpg", title: "Laboratory Technician at Work", oromo: "Ogeessa Kutaa Qorannoo", category: "Diagnostics" },
 
   { src: "/images/imageDoc/clinic-staff-group.jpg", title: "Our Multidisciplinary Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
-  { src: "/images/imageDoc/dr-dejene-portrait.jpg", title: "Dr. Dejene Desalegn — Founder & Owner", oromo: "Hundeessaa fi Ogeessa Olaanaa", category: "Team" },
+  { src: "/images/imageDoc/dr-dejene-portrait.jpg", title: "Dr. Dejene Desalegn — Founder & Medical Director", oromo: "Hundeessaa fi Ogeessa Olaanaa", category: "Team" },
   { src: "/images/imageDoc/dr-tadese-portrait.jpg", title: "Dr. Tadesse Soresso — Pediatrician", oromo: "Ogeessa Fayyaa Daa'immanii", category: "Team" },
 ];
 

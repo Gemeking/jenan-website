@@ -6,7 +6,7 @@ const doctors = [
   {
     name: "Dr. Dejene Desalegn",
     oromo: "Hundeessaa fi Ogeessa Olaanaa",
-    role: "Founder & Owner — General Surgeon",
+    role: "Founder & Medical Director — General Surgeon",
     image: "/images/imageDoc/dr-dejene-portrait.jpg",
     experience: "20+",
     experienceLabel: "Years of Experience",
@@ -14,7 +14,7 @@ const doctors = [
     accent: "brand-red",
     quote: "Dhukkubsataa hunda maatii keenya godhannee yaalla.",
     quoteEn: "We treat every patient as our own family.",
-    bio: "Dr. Dejene Desalegn is the founder and owner of Jenan Surgical Speciality Center — a name well known and deeply trusted throughout Ashewa Meda and the greater Burayu community. With over 20 years of surgical experience, he built Jenan from a small clinic into a full surgical speciality center, personally overseeing thousands of successful procedures and mentoring the medical team that carries his standard of care forward every day.",
+    bio: "Dr. Dejene Desalegn is the founder and Medical Director of Jenan Surgical Speciality Center — a name well known and deeply trusted throughout Ashewa Meda and the greater Burayu community. With over 20 years of surgical experience, he built Jenan from a small clinic into a full surgical speciality center, personally overseeing thousands of successful procedures and mentoring the medical team that carries his standard of care forward every day.",
     tags: ["General & Laparoscopic Surgery", "Founder & Medical Director", "20+ Years in Ashewa Meda"],
   },
   {
