@@ -3,11 +3,19 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import DoctorsSection from "@/components/home/DoctorsSection";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Jenan Surgical Speciality Center",
-  description: "Learn about Jenan Surgical Speciality Center — our history, mission, vision, and the expert team dedicated to your health in Ethiopia.",
+  title: "About Us",
+  description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Burayu — our history, mission, core values, and the surgeons and staff behind your care.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Jenan Surgical Speciality Center",
+    description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Burayu — our history, mission, core values, and the surgeons and staff behind your care.",
+    url: "/about",
+    images: ["/images/imageDoc/clinic-staff-group.jpg"],
+  },
 };
 
 const milestones = [
@@ -29,6 +37,7 @@ const coreValues = [
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }]} />
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">

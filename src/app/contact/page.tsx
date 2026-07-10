@@ -1,12 +1,19 @@
 import { Phone, MapPin, Clock, Mail } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import Image from "next/image";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Jenan Surgical Speciality Center",
-  description:
-    "Contact Jenan Surgical Speciality Center — 24/7 emergency line and location in Ashewa Meda, Burayu, Ethiopia.",
+  title: "Contact Us",
+  description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Burayu, Ethiopia.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Jenan Surgical Speciality Center",
+    description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Burayu, Ethiopia.",
+    url: "/contact",
+    images: ["/images/imageDoc/reception-counter.jpg"],
+  },
 };
 
 const contactInfo = [
@@ -22,7 +29,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Location",
     lines: ["Shaka Mall, Ashewa Meda", "Sheger Maka Nono Sub City, Burayu"],
-    href: "https://maps.google.com/?q=Ashewa+Meda+Burayu",
+    href: "https://www.google.com/maps/search/?api=1&query=9.032859993684763,38.665363133229945",
     iconBg: "bg-blue-50 border-blue-200",
     iconColor: "text-blue-600",
   },
@@ -37,8 +44,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    lines: ["info@jenansurgical.com"],
-    href: "mailto:info@jenansurgical.com",
+    lines: ["jenansurgicalcenter@gmail.com"],
+    href: "mailto:jenansurgicalcenter@gmail.com",
     iconBg: "bg-amber-50 border-amber-200",
     iconColor: "text-amber-600",
   },
@@ -47,6 +54,7 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Contact Us", path: "/contact" }]} />
 
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-24 overflow-hidden bg-slate-900">
@@ -134,7 +142,7 @@ export default function ContactPage() {
             <RevealOnScroll direction="left" className="lg:col-span-3">
               <div className="card overflow-hidden" style={{ height: 380 }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.097!2d38.7167!3d9.0222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDEnMjAuMCJOIDM4wrA0MycwMC4wIkU!5e0!3m2!1sen!2set!4v1"
+                  src="https://www.google.com/maps?q=9.032859993684763,38.665363133229945&z=17&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

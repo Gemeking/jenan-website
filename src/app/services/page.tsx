@@ -2,11 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | Jenan Surgical Speciality Center",
-  description: "Explore our full range of surgical, diagnostic, and medical services at Jenan Surgical Speciality Center, Ethiopia.",
+  title: "Services",
+  description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Burayu.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Medical Services | Jenan Surgical Speciality Center",
+    description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Burayu.",
+    url: "/services",
+    images: ["/images/imageDoc/operating-room-3-wide.jpg"],
+  },
 };
 
 const mainServices = [
@@ -99,6 +107,7 @@ const additionalServices = [
 export default function ServicesPage() {
   return (
     <div className="bg-white min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} />
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">

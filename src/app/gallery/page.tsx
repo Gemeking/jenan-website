@@ -1,16 +1,25 @@
 import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery | Jenan Surgical Speciality Center",
+  title: "Gallery",
   description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Burayu, Ethiopia.",
+  alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "Photo Gallery | Jenan Surgical Speciality Center",
+    description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Burayu, Ethiopia.",
+    url: "/gallery",
+    images: ["/images/imageDoc/operating-room-3-wide.jpg"],
+  },
 };
 
 export default function GalleryPage() {
   return (
     <div className="bg-white min-h-screen">
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Gallery", path: "/gallery" }]} />
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">

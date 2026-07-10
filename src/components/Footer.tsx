@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail size={15} className="text-brand-red mt-0.5 shrink-0" />
-                <a href="mailto:info@jenansurgical.com" className="text-slate-400 hover:text-white text-sm transition-colors">info@jenansurgical.com</a>
+                <a href="mailto:jenansurgicalcenter@gmail.com" className="text-slate-400 hover:text-white text-sm transition-colors">jenansurgicalcenter@gmail.com</a>
               </li>
             </ul>
           </div>
