@@ -178,7 +178,7 @@ export default function Navbar() {
               </div>
               <div>
                 <p className="text-sm text-slate-500 font-medium">Bakka — Location</p>
-                <p className="text-sm text-slate-300 leading-snug">Shaka Mall, Ashewa Meda, Burayu</p>
+                <p className="text-sm text-slate-300 leading-snug">Shaka Mall, Ashewa Meda, Melka Nono</p>
               </div>
             </div>
 

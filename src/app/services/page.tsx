@@ -7,11 +7,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Burayu.",
+  description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Melka Nono.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Medical Services | Jenan Surgical Speciality Center",
-    description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Burayu.",
+    description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Melka Nono.",
     url: "/services",
     images: ["/images/imageDoc/operating-room-3-wide.jpg"],
   },

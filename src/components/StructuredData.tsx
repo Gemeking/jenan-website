@@ -7,7 +7,7 @@ const clinicSchema = {
   name: "Jenan Surgical Speciality Center",
   alternateName: "Wiirtuu Baqaqsanii Yaaluu Jennaan",
   description:
-    "Surgical speciality center offering general & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services in Burayu, Ethiopia.",
+    "Surgical speciality center offering general & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services in Melka Nono, Sheger, Ethiopia.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/hero/banner-logo.png`,
   image: [`${SITE_URL}/images/hero/building-signage.jpg`, `${SITE_URL}/images/hero/entrance-arch-street.jpg`],
@@ -16,7 +16,7 @@ const clinicSchema = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "Shaka Mall, Ashewa Meda",
-    addressLocality: "Burayu",
+    addressLocality: "Melka Nono",
     addressRegion: "Oromia",
     addressCountry: "ET",
   },

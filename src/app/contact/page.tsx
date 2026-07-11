@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Burayu, Ethiopia.",
+  description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Melka Nono, Ethiopia.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Jenan Surgical Speciality Center",
-    description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Burayu, Ethiopia.",
+    description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Melka Nono, Ethiopia.",
     url: "/contact",
     images: ["/images/imageDoc/reception-counter.jpg"],
   },
@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    lines: ["Shaka Mall, Ashewa Meda", "Sheger Maka Nono Sub City, Burayu"],
+    lines: ["Shaka Mall, Ashewa Meda", "Melka Nono Sub City, Sheger"],
     href: "https://www.google.com/maps/search/?api=1&query=9.032859993684763,38.665363133229945",
     iconBg: "bg-blue-50 border-blue-200",
     iconColor: "text-blue-600",
@@ -163,8 +163,8 @@ export default function ContactPage() {
                     <MapPin size={16} className="text-brand-red mt-0.5 shrink-0" />
                     <div>
                       <p className="text-slate-900 text-sm font-black">Shaka Mall, Ashewa Meda</p>
-                      <p className="text-slate-400 text-sm mt-0.5">Sheger Maka Nono Sub City</p>
-                      <p className="text-slate-400 text-sm">Burayu, Addis Ababa, Ethiopia</p>
+                      <p className="text-slate-400 text-sm mt-0.5">Melka Nono Sub City, Sheger</p>
+                      <p className="text-slate-400 text-sm">Addis Ababa, Ethiopia</p>
                       <p className="text-slate-400 text-sm mt-1">~200m East of Hills Top School</p>
                     </div>
                   </div>

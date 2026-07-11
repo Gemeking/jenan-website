@@ -30,7 +30,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
-              Wiirtuu Baqaqsanii Yaaluu Jennaan — trusted by families across Ashewa Meda and Burayu for surgical, diagnostic, and emergency care.
+              Wiirtuu Baqaqsanii Yaaluu Jennaan — trusted by families across Ashewa Meda and Melka Nono for surgical, diagnostic, and emergency care.
             </p>
             <div className="flex gap-3">
               {[
@@ -82,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin size={15} className="text-brand-red mt-0.5 shrink-0" />
-                <span className="text-slate-400 text-sm leading-relaxed">Shaka Mall, Ashewa Meda, Sheger Maka Nono Sub City, Burayu, Ethiopia</span>
+                <span className="text-slate-400 text-sm leading-relaxed">Shaka Mall, Ashewa Meda, Melka Nono Sub City, Sheger, Ethiopia</span>
               </li>
               <li className="flex gap-3">
                 <Phone size={15} className="text-brand-red mt-0.5 shrink-0" />

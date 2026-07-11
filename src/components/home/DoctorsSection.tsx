@@ -14,7 +14,7 @@ const doctors = [
     accent: "brand-red",
     quote: "Dhukkubsataa hunda maatii keenya godhannee yaalla.",
     quoteEn: "We treat every patient as our own family.",
-    bio: "Dr. Dejene Desalegn is the founder and Medical Director of Jenan Surgical Speciality Center — a name well known and deeply trusted throughout Ashewa Meda and the greater Burayu community. With over 20 years of surgical experience, he built Jenan from a small clinic into a full surgical speciality center, personally overseeing thousands of successful procedures and mentoring the medical team that carries his standard of care forward every day.",
+    bio: "Dr. Dejene Desalegn is the founder and Medical Director of Jenan Surgical Speciality Center — a name well known and deeply trusted throughout Ashewa Meda and the greater Melka Nono community. With over 20 years of surgical experience, he built Jenan from a small clinic into a full surgical speciality center, personally overseeing thousands of successful procedures and mentoring the medical team that carries his standard of care forward every day.",
     tags: ["General & Laparoscopic Surgery", "Founder & Medical Director", "20+ Years in Ashewa Meda"],
   },
   {
@@ -46,7 +46,7 @@ export default function DoctorsSection() {
             <span className="gradient-text-red">Doctors</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Decades of combined experience, trusted by families across Ashewa Meda and Burayu for surgical and pediatric excellence.
+            Decades of combined experience, trusted by families across Ashewa Meda and Melka Nono for surgical and pediatric excellence.
           </p>
         </RevealOnScroll>
 
@@ -130,10 +130,10 @@ export default function DoctorsSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-center bg-slate-50 border border-slate-100 rounded-2xl px-6 py-5">
             <div className="flex items-center gap-2">
               <Award size={16} className="text-brand-red" />
-              <span className="text-slate-700 text-sm font-bold">55+ Combined Years Treating Patients in Burayu</span>
+              <span className="text-slate-700 text-sm font-bold">55+ Combined Years Treating Patients in Melka Nono</span>
             </div>
             <span className="hidden sm:block w-1 h-1 rounded-full bg-slate-300" />
-            <span className="text-slate-500 text-sm">Trusted throughout Ashewa Meda &amp; Burayu — Amanamummaa fi Beekamummaa</span>
+            <span className="text-slate-500 text-sm">Trusted throughout Ashewa Meda &amp; Melka Nono — Amanamummaa fi Beekamummaa</span>
           </div>
         </RevealOnScroll>
       </div>

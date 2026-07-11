@@ -84,7 +84,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="hero-sub-shadow text-white/85 text-base sm:text-lg leading-relaxed max-w-lg">
-              A surgical speciality center in Burayu, Ethiopia. Skilled surgeons, honest care, and modern equipment — every hour of every day.
+              A surgical speciality center in Melka Nono, Ethiopia. Skilled surgeons, honest care, and modern equipment — every hour of every day.
             </p>
 
             {/* Oromo awareness line */}

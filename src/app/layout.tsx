@@ -11,29 +11,31 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 const SITE_URL = "https://jenansurgical.et";
 const SITE_NAME = "Jenan Surgical Speciality Center";
 const DESCRIPTION =
-  "Jenan Surgical Speciality Center (Wiirtuu Baqaqsanii Yaaluu Jennaan) is a surgical hospital in Ashewa Meda, Burayu, Ethiopia — general & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services.";
+  "Jenan Surgical Speciality Center (Wiirtuu Baqaqsanii Yaaluu Jennaan) is a surgical hospital in Ashewa Meda, Melka Nono, Ethiopia — general & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Burayu, Ashewa Meda Hospital`,
+    default: `${SITE_NAME} | Melka Nono, Ashewa Meda Hospital`,
     template: `%s | ${SITE_NAME}`,
   },
   description: DESCRIPTION,
   keywords: [
     "Jenan Surgical",
     "Jenan Surgical Speciality Center",
-    "Jenan Hospital Burayu",
-    "Jenan Surgical Burayu",
-    "surgical hospital Burayu",
+    "Jenan Hospital Melka Nono",
+    "Jenan Surgical Melka Nono",
+    "surgical hospital Melka Nono",
     "hospital Ashewa Meda",
     "surgical center Ethiopia",
-    "Burayu clinic",
+    "Melka Nono clinic",
+    "hospital Sheger",
+    "Melka Nono Sub City Sheger",
     "Addis Ababa surgical hospital",
     "Wiirtuu Baqaqsanii Yaaluu Jennaan",
     "Dr Dejene Desalegn surgeon",
-    "pediatrician Burayu",
-    "24/7 emergency hospital Burayu",
+    "pediatrician Melka Nono",
+    "24/7 emergency hospital Melka Nono",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -46,20 +48,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Burayu, Ashewa Meda Hospital`,
+    title: `${SITE_NAME} | Melka Nono, Ashewa Meda Hospital`,
     description: DESCRIPTION,
     images: [
       {
         url: "/images/hero/building-signage.jpg",
         width: 1448,
         height: 1086,
-        alt: "Jenan Surgical Speciality Center building in Ashewa Meda, Burayu",
+        alt: "Jenan Surgical Speciality Center building in Ashewa Meda, Melka Nono",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Burayu, Ashewa Meda Hospital`,
+    title: `${SITE_NAME} | Melka Nono, Ashewa Meda Hospital`,
     description: DESCRIPTION,
     images: ["/images/hero/building-signage.jpg"],
   },

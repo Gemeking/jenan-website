@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Burayu, Ethiopia.",
+  description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Melka Nono, Ethiopia.",
   alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Photo Gallery | Jenan Surgical Speciality Center",
-    description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Burayu, Ethiopia.",
+    description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Melka Nono, Ethiopia.",
     url: "/gallery",
     images: ["/images/imageDoc/operating-room-3-wide.jpg"],
   },

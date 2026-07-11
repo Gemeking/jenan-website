@@ -8,18 +8,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Burayu — our history, mission, core values, and the surgeons and staff behind your care.",
+  description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Melka Nono — our history, mission, core values, and the surgeons and staff behind your care.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Jenan Surgical Speciality Center",
-    description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Burayu — our history, mission, core values, and the surgeons and staff behind your care.",
+    description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Melka Nono — our history, mission, core values, and the surgeons and staff behind your care.",
     url: "/about",
     images: ["/images/imageDoc/clinic-staff-group.jpg"],
   },
 };
 
 const milestones = [
-  { year: "2014", oromo: "Wiirtuu Jennaan bu'uurfame", event: "Jenan Medical Center founded in Burayu, Addis Ababa" },
+  { year: "2014", oromo: "Wiirtuu Jennaan bu'uurfame", event: "Jenan Medical Center founded in Melka Nono, Addis Ababa" },
   { year: "2016", oromo: "Kutaa baqaqsanii lama baname", event: "Expanded to full surgical suite with Operating Theatre I and II" },
   { year: "2018", oromo: "Sakatta'a ammayyaan jalqabame", event: "Introduced advanced diagnostic imaging — X-ray and ultrasound" },
   { year: "2020", oromo: "Tajaajila hatattamaa sa'aa 24 baname", event: "Launched full 24/7 emergency services" },
@@ -50,7 +50,7 @@ export default function AboutPage() {
             <span className="text-brand-red-mid">Since 2014</span>
           </h1>
           <p className="text-slate-300 text-xl leading-relaxed max-w-2xl">
-            Jenan Surgical Speciality Center was founded to bring skilled, dependable surgical care to Ashewa Meda and the wider Burayu community.
+            Jenan Surgical Speciality Center was founded to bring skilled, dependable surgical care to Ashewa Meda and the wider Melka Nono community.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 Our Story{" "}<span className="gradient-text-red">So Far</span>
               </h2>
               <div className="space-y-4 text-slate-500 text-base leading-relaxed">
-                <p>Founded in Burayu, Addis Ababa, Jenan Medical Center began as a vision: to create a place where every Ethiopian could access the same level of surgical care found in the world&apos;s best hospitals.</p>
+                <p>Founded in Melka Nono, Addis Ababa, Jenan Medical Center began as a vision: to create a place where every Ethiopian could access the same level of surgical care found in the world&apos;s best hospitals.</p>
                 <p className="text-slate-700 italic border-l-2 border-brand-red pl-4 py-1">
                   &ldquo;Waggaa kurnan darbaniif, wiirtuun keenya xiqqaa irraa guddatee wiirtuu baqaqsanii yaaluu guutuu ta&apos;e — kutaa yaalaa lama, kutaa fayyaa argachuu, meeshaalee diagnostics ammayyaa, fi tajaajila hatattamaa sa&apos;aa 24 qabu.&rdquo;
                 </p>
