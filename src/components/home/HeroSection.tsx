@@ -7,10 +7,11 @@ import { ArrowRight, Phone, Shield, Clock, ChevronDown } from "lucide-react";
 import MedicalCross3D from "@/components/ui/MedicalCross3D";
 
 const slides = [
-  { src: "/images/hero/building-signage.jpg", label: "Jenan Surgical Center" },
-  { src: "/images/hero/entrance-arch-street.jpg", label: "Our Entrance in Ashewa Meda" },
-  { src: "/images/imageDoc/operating-room-3-wide.jpg", label: "Advanced Operating Theatres" },
-  { src: "/images/imageDoc/clinic-staff-group.jpg", label: "Our Expert Medical Team" },
+  { src: "/images/imageDoc/building-signage-wide.jpg", label: "Jenan Surgical Center" },
+  { src: "/images/imageDoc/waiting-hallway-empty.jpg", label: "Modern Facilities" },
+  { src: "/images/imageDoc/ultrasound-exam-room.jpg", label: "Precision Diagnostics" },
+  { src: "/images/imageDoc/sterilization-autoclave-room.jpg", label: "Sterilization & Safety" },
+  { src: "/images/imageDoc/inpatient-ward-room.jpg", label: "Comfortable Patient Care" },
 ];
 
 export default function HeroSection() {
@@ -45,10 +46,12 @@ export default function HeroSection() {
           </div>
         ))}
 
-        {/* Strong dark overlay — heavier on mobile for text clarity */}
-        <div className="absolute inset-0 bg-black/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/80 sm:via-black/55 sm:to-black/20" />
+        {/* Overlay — moody vertical gradient on mobile so the photo still reads through, directional wash on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/85 sm:bg-gradient-to-r sm:from-black/80 sm:via-black/55 sm:to-black/20" />
         {/* Bottom fade */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" />
+        {/* Soft vignette for depth */}
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_45%,rgba(0,0,0,0.35)_100%)]" />
       </div>
 
       {/* ── Content ── */}

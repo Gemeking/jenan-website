@@ -41,7 +41,7 @@ export default function TeamSection() {
           <RevealOnScroll direction="left">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover aspect-[1195/896] bg-slate-100">
               <Image
-                src="/images/imageDoc/clinic-staff-group.jpg"
+                src="/images/imageDoc/nurses-team-lineup-1.jpg"
                 alt="Jenan Medical Team"
                 fill
                 className="object-cover"

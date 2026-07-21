@@ -10,25 +10,25 @@ const services = [
     title: "General Surgery",
     oromo: "Baqaqsanii Yaaluu",
     description: "Surgical procedures performed by experienced surgeons using modern equipment and internationally-recognised techniques.",
-    image: "/images/imageDoc/operating-room-3.jpg",
+    image: "/images/imageDoc/operating-room-staff.jpg",
   },
   {
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
     description: "Specialised medical and surgical care designed for infants, children, and adolescents with compassion and clinical precision.",
-    image: "/images/imageDoc/injection-room.jpg",
+    image: "/images/imageDoc/or-icu-hallway.jpg",
   },
   {
     title: "Maternal Care",
     oromo: "Haadha Yaaluu",
     description: "Obstetric and gynaecological care ensuring the safety and wellbeing of mothers and newborns throughout the journey.",
-    image: "/images/imageDoc/inpatient-ward-bed.jpg",
+    image: "/images/imageDoc/inpatient-ward-room.jpg",
   },
   {
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
     description: "In-house X-ray, Mindray DC-40 colour Doppler ultrasound, and digital radiology workstation for fast, accurate diagnosis.",
-    image: "/images/imageDoc/ultrasound-room.jpg",
+    image: "/images/imageDoc/ultrasound-exam-room.jpg",
   },
   {
     title: "Emergency Care",
@@ -40,7 +40,7 @@ const services = [
     title: "Sterilization & Safety",
     oromo: "Qulqullina Eeggannoo",
     description: "Hospital-grade autoclave sterilization and strict WHO infection-control protocols guarantee the highest safety standards.",
-    image: "/images/imageDoc/sterilization-autoclave.jpg",
+    image: "/images/imageDoc/sterilization-autoclave-room.jpg",
   },
 ];
 

@@ -6,16 +6,16 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const facilities = [
-  { src: "/images/imageDoc/operating-room-3-wide.jpg", title: "Operating Theatre", oromo: "Kutaa Baqaqsanii", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
-  { src: "/images/imageDoc/clinic-staff-group.jpg", title: "Expert Medical Team", oromo: "Garee Ogeeyyii Fayyaa", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
-  { src: "/images/imageDoc/inpatient-ward-bed.jpg", title: "Inpatient Ward", oromo: "Kutaa Fayyinaa", desc: "Kutaa booda baqaqsaniitti — post-operative recovery with close monitoring and oxygen supply.", tag: "Recovery" },
-  { src: "/images/imageDoc/ultrasound-room.jpg", title: "Mindray DC-40 Ultrasound", oromo: "Meeshaa Ultrasound", desc: "Ultrasoond ammayyaa — colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
-  { src: "/images/imageDoc/xray-room-machine.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", desc: "Sakatta'a X-ray — high-resolution radiography for fast and accurate skeletal and chest imaging.", tag: "Radiology" },
-  { src: "/images/imageDoc/sterilization-autoclave.jpg", title: "Sterilization Room", oromo: "Kutaa Qulqulleessuu", desc: "Qulqulleessuu meeshaalee — autoclave sterilization ensuring every instrument meets international safety standards.", tag: "Safety" },
-  { src: "/images/imageDoc/laboratory-chemistry-analyzer.jpg", title: "Clinical Laboratory", oromo: "Kutaa Qorannoo", desc: "Qorannoo dhiigaa fi fincaanii — in-house clinical chemistry and immunoassay testing for fast, accurate results.", tag: "Laboratory" },
-  { src: "/images/imageDoc/pharmacy-entrance.jpg", title: "In-House Pharmacy", oromo: "Kutaa Qorichaa", desc: "Qoricha barbaachisu argachuu dandeessu — a fully stocked on-site pharmacy for every prescription need.", tag: "Pharmacy" },
-  { src: "/images/imageDoc/surgical-waiting-hallway.jpg", title: "Patient Waiting Area", oromo: "Bakka Eeggannoo Dhukkubsataa", desc: "Bakka eeggannoo bal'aa fi nagaa — spacious and comfortable waiting area for a calm experience.", tag: "Facilities" },
-  { src: "/images/imageDoc/reception-counter.jpg", title: "24-Hour Reception", oromo: "Simichaa Sa'aa 24", desc: "Sa'aa 24 banaa — always-staffed reception and triage area open around the clock.", tag: "Reception" },
+  { src: "/images/imageDoc/operating-room-staff.jpg", title: "Operating Theatre", oromo: "Kutaa Baqaqsanii", desc: "Full surgical suite with overhead lights, anesthesia machine, and complete instrumentation.", tag: "Surgery" },
+  { src: "/images/imageDoc/nurses-team-lineup-1.jpg", title: "Expert Medical Team", oromo: "Garee Ogeeyyii Fayyaa", desc: "Dedicated surgeons, nurses, and anaesthetists delivering outstanding patient outcomes.", tag: "Team" },
+  { src: "/images/imageDoc/inpatient-ward-room.jpg", title: "Inpatient Ward", oromo: "Kutaa Fayyinaa", desc: "Kutaa booda baqaqsaniitti — post-operative recovery with close monitoring and oxygen supply.", tag: "Recovery" },
+  { src: "/images/imageDoc/ultrasound-exam-room.jpg", title: "Mindray DC-40 Ultrasound", oromo: "Meeshaa Ultrasound", desc: "Ultrasoond ammayyaa — colour Doppler ultrasound for abdominal, obstetric, and vascular imaging.", tag: "Diagnostics" },
+  { src: "/images/imageDoc/xray-machine-room.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", desc: "Sakatta'a X-ray — high-resolution radiography for fast and accurate skeletal and chest imaging.", tag: "Radiology" },
+  { src: "/images/imageDoc/sterilization-autoclave-room.jpg", title: "Sterilization Room", oromo: "Kutaa Qulqulleessuu", desc: "Qulqulleessuu meeshaalee — autoclave sterilization ensuring every instrument meets international safety standards.", tag: "Safety" },
+  { src: "/images/imageDoc/laboratory-equipment-desk.jpg", title: "Clinical Laboratory", oromo: "Kutaa Qorannoo", desc: "Qorannoo dhiigaa fi fincaanii — in-house clinical chemistry and immunoassay testing for fast, accurate results.", tag: "Laboratory" },
+  { src: "/images/imageDoc/ambulance-exterior.jpg", title: "24/7 Ambulance Service", oromo: "Konkolaataa Hatattamaa", desc: "Konkolaataa hatattamaa yeroo hunda qophii — a dedicated ambulance ready to respond any hour of the day or night.", tag: "Emergency" },
+  { src: "/images/imageDoc/waiting-hallway-empty.jpg", title: "Patient Waiting Area", oromo: "Bakka Eeggannoo Dhukkubsataa", desc: "Bakka eeggannoo bal'aa fi nagaa — spacious and comfortable waiting area for a calm experience.", tag: "Facilities" },
+  { src: "/images/imageDoc/reception-desk.jpg", title: "24-Hour Reception", oromo: "Simichaa Sa'aa 24", desc: "Sa'aa 24 banaa — always-staffed reception and triage area open around the clock.", tag: "Reception" },
 ];
 
 const tagStyles: Record<string, string> = {
@@ -26,7 +26,7 @@ const tagStyles: Record<string, string> = {
   Radiology: "bg-indigo-50 text-indigo-600 border-indigo-200",
   Safety: "bg-amber-50 text-amber-600 border-amber-200",
   Laboratory: "bg-cyan-50 text-cyan-600 border-cyan-200",
-  Pharmacy: "bg-fuchsia-50 text-fuchsia-600 border-fuchsia-200",
+  Emergency: "bg-fuchsia-50 text-fuchsia-600 border-fuchsia-200",
   Facilities: "bg-slate-50 text-slate-600 border-slate-200",
   Reception: "bg-rose-50 text-rose-600 border-rose-200",
 };

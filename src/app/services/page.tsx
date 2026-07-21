@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Medical Services | Jenan Surgical Speciality Center",
     description: "General & laparoscopic surgery, pediatric care, maternal care, diagnostic imaging, and 24/7 emergency services at Jenan Surgical Speciality Center, Melka Nono.",
     url: "/services",
-    images: ["/images/imageDoc/operating-room-3-wide.jpg"],
+    images: ["/images/imageDoc/operating-room-staff.jpg"],
   },
 };
 
@@ -22,7 +22,7 @@ const mainServices = [
     title: "General Surgery",
     oromo: "Baqaqsanii Yaaluu",
     borderColor: "#DC2626",
-    image: "/images/imageDoc/operating-room-3.jpg",
+    image: "/images/imageDoc/operating-room-staff.jpg",
     description: "Our experienced surgical team performs a comprehensive range of general surgical procedures using the latest minimally invasive and open surgical techniques.",
     features: ["Appendectomy & hernia repair", "Cholecystectomy (gallbladder removal)", "Abdominal surgeries", "Wound debridement & closure", "Laparoscopic procedures", "Soft tissue tumour excision"],
   },
@@ -30,7 +30,7 @@ const mainServices = [
     title: "Pediatric Care",
     oromo: "Daa'imman Yaaluu",
     borderColor: "#2563EB",
-    image: "/images/imageDoc/injection-room.jpg",
+    image: "/images/imageDoc/or-icu-hallway.jpg",
     description: "Specialised medical and surgical care tailored to the unique needs of infants, children, and adolescents, delivered with extra sensitivity and expertise.",
     features: ["Paediatric general surgery", "Neonatal care support", "Paediatric medical consultations", "Minor paediatric procedures", "Child-friendly recovery environment", "Family-centred care approach"],
   },
@@ -38,7 +38,7 @@ const mainServices = [
     title: "Maternal & Obstetric Care",
     oromo: "Haadha fi Daa'ima Yaaluu",
     borderColor: "#E11D48",
-    image: "/images/imageDoc/inpatient-ward-bed.jpg",
+    image: "/images/imageDoc/inpatient-ward-room.jpg",
     description: "Care for mothers throughout pregnancy, childbirth, and the postnatal period with a focus on the safety of both mother and child.",
     features: ["Caesarean section (C-section)", "Normal delivery support", "Gynaecological surgeries", "Ectopic pregnancy management", "Postnatal recovery care", "Family planning consultations"],
   },
@@ -46,7 +46,7 @@ const mainServices = [
     title: "Diagnostic Imaging",
     oromo: "Sakatta'a Fayyaa",
     borderColor: "#7C3AED",
-    image: "/images/imageDoc/ultrasound-room.jpg",
+    image: "/images/imageDoc/ultrasound-exam-room.jpg",
     description: "Advanced in-house imaging capabilities enabling rapid, accurate diagnosis to guide treatment decisions and surgical planning.",
     features: ["Mindray DC-40 colour Doppler ultrasound", "Abdominal & pelvic sonography", "Obstetric ultrasound", "Full digital X-ray suite", "Chest & skeletal radiography", "Digital radiology workstation"],
   },
@@ -62,7 +62,7 @@ const mainServices = [
     title: "Sterilization & Safety",
     oromo: "Qulqullina fi Nageenya",
     borderColor: "#059669",
-    image: "/images/imageDoc/sterilization-autoclave.jpg",
+    image: "/images/imageDoc/sterilization-autoclave-room.jpg",
     description: "Our rigorous sterilization department ensures every instrument used in procedures meets the highest international infection-control standards.",
     features: ["Large-capacity autoclave sterilization", "WHO infection control protocols", "Single-use instrument policies", "Sterile environment maintenance", "Surgical safety checklist compliance", "Regular equipment certification"],
   },
@@ -111,7 +111,7 @@ export default function ServicesPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/imageDoc/operating-room-3-wide.jpg" alt="Operating Theatre" fill className="object-cover opacity-40" />
+          <Image src="/images/imageDoc/operating-room-staff.jpg" alt="Operating Theatre" fill className="object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

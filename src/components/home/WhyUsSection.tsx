@@ -21,7 +21,7 @@ export default function WhyUsSection() {
           <RevealOnScroll direction="left">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 520 }}>
               <Image
-                src="/images/imageDoc/operating-room-3-wide.jpg"
+                src="/images/imageDoc/operating-room-staff.jpg"
                 alt="Operating Room"
                 fill
                 className="object-cover"

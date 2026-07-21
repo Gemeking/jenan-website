@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "About Jenan Surgical Speciality Center",
     description: "The story of Jenan Surgical Speciality Center in Ashewa Meda, Melka Nono — our history, mission, core values, and the surgeons and staff behind your care.",
     url: "/about",
-    images: ["/images/imageDoc/clinic-staff-group.jpg"],
+    images: ["/images/imageDoc/nurses-team-lineup-1.jpg"],
   },
 };
 
@@ -28,10 +28,10 @@ const milestones = [
 ];
 
 const coreValues = [
-  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/imageDoc/inpatient-ward-bed.jpg" },
-  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/imageDoc/sterilization-autoclave.jpg" },
-  { label: "Skill", oromo: "Qulqullina", desc: "Careful, consistent standards in every procedure we perform.", image: "/images/imageDoc/operating-room-3.jpg" },
-  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/imageDoc/clinic-staff-group.jpg" },
+  { label: "Compassion", oromo: "Gaddoo", desc: "Treating every patient with empathy, dignity, and warmth.", image: "/images/imageDoc/inpatient-ward-room.jpg" },
+  { label: "Safety", oromo: "Nageenya", desc: "Zero compromise on sterilization and surgical protocols.", image: "/images/imageDoc/sterilization-autoclave-room.jpg" },
+  { label: "Skill", oromo: "Qulqullina", desc: "Careful, consistent standards in every procedure we perform.", image: "/images/imageDoc/operating-room-staff.jpg" },
+  { label: "Teamwork", oromo: "Hojii Gamtaa", desc: "Multidisciplinary collaboration for better outcomes.", image: "/images/imageDoc/nurses-team-lineup-1.jpg" },
 ];
 
 export default function AboutPage() {
@@ -41,7 +41,7 @@ export default function AboutPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/imageDoc/building-facade-signage.jpg" alt="Jenan Surgical Center Building" fill className="object-cover opacity-45" />
+          <Image src="/images/imageDoc/building-signage-wide.jpg" alt="Jenan Surgical Center Building" fill className="object-cover opacity-45" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <RevealOnScroll direction="left">
               <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ height: 480 }}>
-                <Image src="/images/imageDoc/operating-room-3-wide.jpg" alt="Operating Room" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/operating-room-staff.jpg" alt="Operating Room" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-white rounded-2xl px-5 py-4 shadow-lg inline-block">
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <RevealOnScroll direction="left">
               <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
-                <Image src="/images/imageDoc/operating-room-3.jpg" alt="Our Mission" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/operating-room-staff.jpg" alt="Our Mission" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-brand-red rounded mb-4" />
@@ -119,7 +119,7 @@ export default function AboutPage() {
             </RevealOnScroll>
             <RevealOnScroll direction="right">
               <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 280 }}>
-                <Image src="/images/imageDoc/entrance-gate-signage.jpg" alt="Our Vision" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src="/images/imageDoc/entrance-market-view.jpg" alt="Our Vision" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-slate-900/20" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <div className="h-1 w-10 bg-blue-500 rounded mb-4" />
@@ -200,7 +200,7 @@ export default function AboutPage() {
           </RevealOnScroll>
           <RevealOnScroll direction="scale">
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover bg-slate-900" style={{ height: 440 }}>
-              <Image src="/images/imageDoc/clinic-staff-group.jpg" alt="Jenan Medical Team" fill className="object-contain" sizes="100vw" />
+              <Image src="/images/imageDoc/nurses-team-lineup-1.jpg" alt="Jenan Medical Team" fill className="object-contain" sizes="100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-center">
                 <p className="text-white font-black text-xl">Our Team in Action</p>

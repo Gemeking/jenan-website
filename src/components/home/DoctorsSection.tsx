@@ -21,7 +21,7 @@ const doctors = [
     name: "Dr. Tadesse Soresso",
     oromo: "Ogeessa Fayyaa Daa'immanii",
     role: "Pediatrician",
-    image: "/images/imageDoc/dr-tadese-portrait.jpg",
+    image: "/images/imageDoc/dr-tadesse-portrait.jpg",
     experience: "35+",
     experienceLabel: "Years of Experience",
     icon: Baby,
@@ -55,8 +55,8 @@ export default function DoctorsSection() {
             <RevealOnScroll key={name} direction={i % 2 === 0 ? "left" : "right"} delay={i * 100}>
               <div className="group relative rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 bg-white border border-slate-100 h-full flex flex-col">
 
-                {/* Portrait — aspect ratio matches source photo exactly so the doctor is always shown in full, never cropped */}
-                <div className="relative overflow-hidden aspect-[3/4] bg-slate-100">
+                {/* Portrait — container ratio matches each doctor's actual photo orientation so cropping stays minimal */}
+                <div className={`relative overflow-hidden bg-slate-100 ${i === 0 ? "aspect-[4/3]" : "aspect-[3/4]"}`}>
                   <Image
                     src={image}
                     alt={name}

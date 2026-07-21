@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
-type Category = "All" | "Surgery" | "Diagnostics" | "Facilities" | "Team";
+type Category = "All" | "Exterior" | "Surgery" | "Diagnostics" | "Facilities" | "Team";
 
 interface GalleryImage {
   src: string;
@@ -14,35 +14,44 @@ interface GalleryImage {
 }
 
 const images: GalleryImage[] = [
-  { src: "/images/imageDoc/entrance-gate-signage.jpg", title: "Main Entrance Gate", oromo: "Balbala Seensaa", category: "Facilities" },
-  { src: "/images/imageDoc/building-facade-signage.jpg", title: "Jenan Building", oromo: "Mana Wiirtuu Jennaan", category: "Facilities" },
-  { src: "/images/imageDoc/reception-counter.jpg", title: "Reception Desk", oromo: "Kutaa Simannaa", category: "Facilities" },
-  { src: "/images/imageDoc/surgical-waiting-hallway.jpg", title: "Patient Waiting Hallway", oromo: "Bakka Eeggannoo", category: "Facilities" },
+  { src: "/images/imageDoc/entrance-market-view.jpg", title: "Street Entrance", oromo: "Balbala Seensaa", category: "Exterior" },
+  { src: "/images/imageDoc/building-signage-wide.jpg", title: "Jenan Building", oromo: "Mana Wiirtuu Jennaan", category: "Exterior" },
+  { src: "/images/imageDoc/building-signage-tall.jpg", title: "Building Facade", oromo: "Fuula Mana Keenya", category: "Exterior" },
+  { src: "/images/imageDoc/building-exterior-portrait.jpg", title: "Jenan Signage", oromo: "Mallattoo Jennaan", category: "Exterior" },
+  { src: "/images/imageDoc/entrance-gate-close.jpg", title: "Main Gate", oromo: "Balbala Guddaa", category: "Exterior" },
+
+  { src: "/images/imageDoc/reception-desk.jpg", title: "Reception Desk", oromo: "Kutaa Simannaa", category: "Facilities" },
+  { src: "/images/imageDoc/opd-entrance-waiting.jpg", title: "OPD Entrance", oromo: "Balbala OPD", category: "Facilities" },
+  { src: "/images/imageDoc/waiting-hallway-empty.jpg", title: "Patient Waiting Hallway", oromo: "Bakka Eeggannoo", category: "Facilities" },
+  { src: "/images/imageDoc/waiting-hallway-patients.jpg", title: "Patient Waiting Area", oromo: "Bakka Eeggannoo Dhukkubsataa", category: "Facilities" },
   { src: "/images/imageDoc/emergency-room-entrance.jpg", title: "Emergency Room", oromo: "Kutaa Hatattamaa", category: "Facilities" },
-  { src: "/images/imageDoc/injection-room-hallway.jpg", title: "Injection Room Hallway", oromo: "Kutaa Maalaqaa", category: "Facilities" },
-  { src: "/images/imageDoc/injection-room.jpg", title: "Injection Room", oromo: "Kutaa Maalaqaa", category: "Facilities" },
-  { src: "/images/imageDoc/pharmacy-entrance.jpg", title: "In-House Pharmacy", oromo: "Kutaa Qorichaa", category: "Facilities" },
-  { src: "/images/imageDoc/exam-room-store.jpg", title: "Exam Room", oromo: "Kutaa Qorannoo", category: "Facilities" },
-  { src: "/images/imageDoc/inpatient-ward-bed.jpg", title: "Inpatient Ward", oromo: "Kutaa Fayyinaa", category: "Facilities" },
+  { src: "/images/imageDoc/injection-procedure-hallway.jpg", title: "Injection & Procedure Rooms", oromo: "Kutaa Maalaqaa", category: "Facilities" },
+  { src: "/images/imageDoc/female-ward-hallway.jpg", title: "Female Ward", oromo: "Kutaa Dubartootaa", category: "Facilities" },
+  { src: "/images/imageDoc/oxygen-tanks-storage.jpg", title: "Oxygen Supply", oromo: "Meeshaa Ogsijinii", category: "Facilities" },
+  { src: "/images/imageDoc/ambulance-exterior.jpg", title: "24/7 Ambulance Service", oromo: "Konkolaataa Hatattamaa", category: "Facilities" },
 
-  { src: "/images/imageDoc/operating-room-3.jpg", title: "Operating Theatre", oromo: "Kutaa Baqaqsanii", category: "Surgery" },
-  { src: "/images/imageDoc/operating-room-3-wide.jpg", title: "Operating Theatre — Wide View", oromo: "Kutaa Baqaqsanii", category: "Surgery" },
-  { src: "/images/imageDoc/sterilization-autoclave.jpg", title: "Sterilization Autoclave", oromo: "Kutaa Qulqulleessuu", category: "Surgery" },
+  { src: "/images/imageDoc/operating-room-staff.jpg", title: "Operating Theatre", oromo: "Kutaa Baqaqsanii", category: "Surgery" },
+  { src: "/images/imageDoc/or-icu-hallway.jpg", title: "OR / ICU Wing", oromo: "Kutaa Yaalaa Cimaa", category: "Surgery" },
+  { src: "/images/imageDoc/inpatient-ward-room.jpg", title: "Inpatient Ward", oromo: "Kutaa Fayyinaa", category: "Surgery" },
+  { src: "/images/imageDoc/sterilization-autoclave-room.jpg", title: "Sterilization Room", oromo: "Kutaa Qulqulleessuu", category: "Surgery" },
+  { src: "/images/imageDoc/consultation-room.jpg", title: "Consultation Room", oromo: "Kutaa Mari'achuu", category: "Surgery" },
 
-  { src: "/images/imageDoc/ultrasound-room.jpg", title: "Ultrasound Suite", oromo: "Meeshaa Ultrasound", category: "Diagnostics" },
-  { src: "/images/imageDoc/xray-room-machine.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", category: "Diagnostics" },
-  { src: "/images/imageDoc/radiology-control-desk.jpg", title: "Radiology Control Desk", oromo: "Kutaa Too'annoo Radiooloojii", category: "Diagnostics" },
-  { src: "/images/imageDoc/radiology-control-desk-alt.jpg", title: "Radiology Control Desk", oromo: "Kutaa Too'annoo Radiooloojii", category: "Diagnostics" },
-  { src: "/images/imageDoc/laboratory-entrance.jpg", title: "Laboratory Entrance", oromo: "Balbala Kutaa Qorannoo", category: "Diagnostics" },
-  { src: "/images/imageDoc/laboratory-chemistry-analyzer.jpg", title: "Clinical Chemistry Analyzer", oromo: "Meeshaa Qorannoo Dhiigaa", category: "Diagnostics" },
+  { src: "/images/imageDoc/ultrasound-exam-room.jpg", title: "Ultrasound Suite", oromo: "Meeshaa Ultrasound", category: "Diagnostics" },
+  { src: "/images/imageDoc/xray-machine-room.jpg", title: "Digital X-Ray Suite", oromo: "Meeshaa X-Ray", category: "Diagnostics" },
+  { src: "/images/imageDoc/xray-digital-workstation.jpg", title: "Radiology Workstation", oromo: "Kutaa Too'annoo Radiooloojii", category: "Diagnostics" },
+  { src: "/images/imageDoc/laboratory-door.jpg", title: "Laboratory Entrance", oromo: "Balbala Kutaa Qorannoo", category: "Diagnostics" },
+  { src: "/images/imageDoc/laboratory-equipment-desk.jpg", title: "Clinical Chemistry Analyzer", oromo: "Meeshaa Qorannoo Dhiigaa", category: "Diagnostics" },
   { src: "/images/imageDoc/lab-technician-microscope.jpg", title: "Laboratory Technician at Work", oromo: "Ogeessa Kutaa Qorannoo", category: "Diagnostics" },
 
-  { src: "/images/imageDoc/clinic-staff-group.jpg", title: "Our Multidisciplinary Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
+  { src: "/images/imageDoc/nurses-team-lineup-1.jpg", title: "Our Nursing Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
+  { src: "/images/imageDoc/nurses-team-lineup-2.jpg", title: "Our Nursing Team", oromo: "Garee Ogeeyyii Fayyaa", category: "Team" },
   { src: "/images/imageDoc/dr-dejene-portrait.jpg", title: "Dr. Dejene Desalegn — Founder & Medical Director", oromo: "Hundeessaa fi Ogeessa Olaanaa", category: "Team" },
-  { src: "/images/imageDoc/dr-tadese-portrait.jpg", title: "Dr. Tadesse Soresso — Pediatrician", oromo: "Ogeessa Fayyaa Daa'immanii", category: "Team" },
+  { src: "/images/imageDoc/dr-dejene-office-wide.jpg", title: "Dr. Dejene Desalegn at Work", oromo: "Hundeessaa fi Ogeessa Olaanaa", category: "Team" },
+  { src: "/images/imageDoc/dr-tadesse-portrait.jpg", title: "Dr. Tadesse Soresso — Pediatrician", oromo: "Ogeessa Fayyaa Daa'immanii", category: "Team" },
+  { src: "/images/imageDoc/dr-tadesse-at-desk.jpg", title: "Dr. Tadesse Soresso at Work", oromo: "Ogeessa Fayyaa Daa'immanii", category: "Team" },
 ];
 
-const categories: Category[] = ["All", "Surgery", "Diagnostics", "Facilities", "Team"];
+const categories: Category[] = ["All", "Exterior", "Surgery", "Diagnostics", "Facilities", "Team"];
 
 export default function GalleryGrid() {
   const [active, setActive] = useState<Category>("All");

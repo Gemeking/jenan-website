@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Photo Gallery | Jenan Surgical Speciality Center",
     description: "A photo tour of Jenan Surgical Speciality Center — operating theatres, diagnostic imaging, laboratory, facilities, and our medical team in Melka Nono, Ethiopia.",
     url: "/gallery",
-    images: ["/images/imageDoc/operating-room-3-wide.jpg"],
+    images: ["/images/imageDoc/operating-room-staff.jpg"],
   },
 };
 
@@ -23,7 +23,7 @@ export default function GalleryPage() {
       {/* ── Page Hero ── */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/images/imageDoc/operating-room-3-wide.jpg" alt="Jenan Surgical Center Gallery" fill className="object-cover opacity-35" />
+          <Image src="/images/imageDoc/operating-room-staff.jpg" alt="Jenan Surgical Center Gallery" fill className="object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

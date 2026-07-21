@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Contact Jenan Surgical Speciality Center",
     description: "Call, visit, or message Jenan Surgical Speciality Center — 24/7 emergency line and our location at Shaka Mall, Ashewa Meda, Melka Nono, Ethiopia.",
     url: "/contact",
-    images: ["/images/imageDoc/reception-counter.jpg"],
+    images: ["/images/imageDoc/reception-desk.jpg"],
   },
 };
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
       <section className="relative pt-36 pb-24 overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <Image
-            src="/images/imageDoc/reception-counter.jpg"
+            src="/images/imageDoc/reception-desk.jpg"
             alt="Jenan Reception"
             fill
             className="object-cover opacity-40"
@@ -190,7 +190,7 @@ export default function ContactPage() {
               {/* Building photo */}
               <div className="relative rounded-2xl overflow-hidden" style={{ height: 150 }}>
                 <Image
-                  src="/images/imageDoc/building-facade-signage.jpg"
+                  src="/images/imageDoc/building-signage-wide.jpg"
                   alt="Jenan Surgical Center Building"
                   fill
                   className="object-cover"
