@@ -76,7 +76,7 @@ export default function DoctorsSection() {
                       {i === 0 && (
                         <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-slate-900 shadow-lg max-w-full">
                           <Star size={12} className="fill-slate-900 shrink-0" />
-                          <span className="text-xs font-black uppercase tracking-wide whitespace-nowrap">Well-Known Locally</span>
+                       
                         </div>
                       )}
                     </div>
